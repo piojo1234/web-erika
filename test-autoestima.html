@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de Autoestima & Límites Personales — Dra. Erika Rodríguez</title>
+  <meta name="description" content="Evalúa tu diálogo interno, cómo te valoras y tu capacidad de establecer límites asertivos con este test clínico de 2 minutos.">
+  
+  <!-- intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tests.css">
+</head>
+<body class="quiz-page">
+
+  <!-- Header del Test -->
+  <header class="quiz-header">
+    <div class="quiz-header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logo.png" alt="Erika Rodríguez" onerror="this.style.display='none'">
+        <span class="logo-text" style="font-size: 1rem;">Erika Rodríguez</span>
+      </a>
+      <a href="index.html" class="quiz-back-btn">← Volver al Inicio</a>
+    </div>
+  </header>
+
+  <main class="quiz-main-container">
+    <div class="quiz-card">
+      
+      <!-- Barra de Progreso -->
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-info">
+          <span id="quiz-progress-text">Inicio</span>
+          <span>Diagnóstico Confidencial</span>
+        </div>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Paso 0: Introducción -->
+      <div class="quiz-step active" id="step-intro">
+        <span class="quiz-badge">TEST GRATUITO • AUTOESTIMA</span>
+        <h2>Test de Autoestima & Límites Personales</h2>
+        <p class="lead-text">
+          Descubre cómo te relacionas contigo mismo/a, la calidad de tu diálogo interno y si la dificultad para poner límites está afectando tu bienestar emocional y tus vínculos.
+        </p>
+        <button class="btn btn-terracota btn-lg" onclick="quiz.goToStep(1)">
+          Comenzar Test de Autoestima 🌱
+        </button>
+      </div>
+
+      <!-- Pregunta 1 -->
+      <div class="quiz-step" id="step-q1">
+        <span class="quiz-badge">PREGUNTA 1 DE 5</span>
+        <h3 class="quiz-question-title">1. ¿Cómo te hablas a ti mismo/a cuando cometes un error?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Soy muy crítico/a y me cuesta perdonarme')">
+            <span>Soy muy crítico/a y me cuesta mucho perdonarme.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Me frustro pero trato de aprender')">
+            <span>Me frustro en el momento, pero trato de aprender de la situación.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Soy compasivo/a, entiendo que es parte del proceso')">
+            <span>Soy compasivo/a; entiendo que equivocarse es parte del crecimiento.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="quiz-step" id="step-q2">
+        <span class="quiz-badge">PREGUNTA 2 DE 5</span>
+        <h3 class="quiz-question-title">2. ¿Te resulta difícil poner límites a los demás por miedo al rechazo o al conflicto?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'Sí, casi siempre termino cediendo')">
+            <span>Sí, casi siempre termino cediendo y haciendo lo que otros quieren.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'A veces, dependiendo de la persona')">
+            <span>A veces, depende de qué tan cercana sea la persona y cuánto me importe.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'No, sé expresar lo que quiero con asertividad')">
+            <span>No, sé expresar lo que quiero y lo que no con tranquilidad y asertividad.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="quiz-step" id="step-q3">
+        <span class="quiz-badge">PREGUNTA 3 DE 5</span>
+        <h3 class="quiz-question-title">3. ¿Cómo reaccionas ante los cumplidos o elogios sinceros?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Me incomodan o siento que no los merezco')">
+            <span>Me incomodan o siento en el fondo que no los merezco del todo.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Los agradezco pero a veces dudo')">
+            <span>Los agradezco, aunque a veces minimizo lo que hice.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Los recibo con gratitud y alegría')">
+            <span>Los recibo con gratitud, alegría y naturalidad.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="quiz-step" id="step-q4">
+        <span class="quiz-badge">PREGUNTA 4 DE 5</span>
+        <h3 class="quiz-question-title">4. ¿Sueles priorizar las necesidades de otros por encima de tu descanso y bienestar?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'Constantemente, me cuesta mucho decir que no')">
+            <span>Constantemente, me invade la culpa si digo que no.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'A veces, pero intento cuidar mis espacios')">
+            <span>A veces, pero intento recordar que debo cuidarme a mí primero.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'No, mantengo un equilibrio saludable')">
+            <span>No, mantengo un equilibrio consciente y sé priorizar mi bienestar.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="quiz-step" id="step-q5">
+        <span class="quiz-badge">PREGUNTA 5 DE 5</span>
+        <h3 class="quiz-question-title">5. ¿Qué tan seguro/a te sientes al tomar decisiones personales importantes?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Dudo mucho y busco aprobación constante')">
+            <span>Dudo mucho y necesito consultar y pedir aprobación a los demás.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Evalúo opciones y decido')">
+            <span>Evalúo bien el panorama y, aunque dudo un poco, tomo la decisión.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Confío plenamente en mi criterio')">
+            <span>Confío en mi intuición y asumo las consecuencias con tranquilidad.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Paso Formulario: Captura de Lead -->
+      <div class="quiz-step" id="step-form">
+        <span class="quiz-badge">PASO FINAL</span>
+        <h2>¡Respuestas Listas!</h2>
+        <p class="lead-text">
+          Ingresa tus datos para procesar el mapa de tu autoestima y recibir recomendaciones para fortalecer tu autoconcepto.
+        </p>
+
+        <form id="quizLeadForm" class="lead-form-grid">
+          <div class="form-group">
+            <label for="lead_name">Tu Nombre Completo *</label>
+            <input type="text" id="lead_name" required placeholder="Ej: Camilo Torres">
+          </div>
+
+          <div class="form-group">
+            <label for="lead_email">Tu Correo Electrónico *</label>
+            <input type="email" id="lead_email" required placeholder="camilo@ejemplo.com">
+          </div>
+
+          <div class="form-group">
+            <label for="lead_phone">Tu Número de WhatsApp *</label>
+            <input type="tel" id="lead_phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lead_reto">¿Cuál sientes que es tu mayor reto con los límites hoy? (Opcional)</label>
+            <input type="text" id="lead_reto" placeholder="Ej: Me cuesta decir no a mi familia / en el trabajo...">
+          </div>
+
+          <button type="submit" id="btnSubmitQuiz" class="btn btn-terracota btn-lg" style="width: 100%; margin-top: 10px;">
+            Generar Mi Diagnóstico de Autoestima ↗
+          </button>
+
+          <p class="privacy-note">
+            🔒 Confidencialidad clínica garantizada.
+          </p>
+        </form>
+      </div>
+
+      <!-- Paso Éxito -->
+      <div class="quiz-step" id="step-success" style="text-align: center;">
+        <div style="font-size: 50px; margin-bottom: 16px;">🌱</div>
+        <h2>¡Diagnóstico de Autoestima Generado!</h2>
+        <p class="lead-text" style="margin-bottom: 20px;">
+          Tus respuestas reflejan la estructura actual de tu diálogo interno y patrones relacionales.
+        </p>
+
+        <div class="diagnosis-result-box">
+          <h4>Observación Terapéutica:</h4>
+          <p>
+            Existe una tendencia a la <strong>autoexigencia y a la postergación de necesidades propias</strong>. Trabajar en el diálogo compasivo y en la asertividad sin culpa te permitirá recuperar energía vital y construir relaciones mucho más equilibradas.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px;">
+          <a id="btnWhatsAppResult" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Recibir Recomendaciones por WhatsApp 💬
+          </a>
+          <a href="index.html#servicios" class="btn btn-secondary">
+            Conoce el Programa "Florecer en 90 Días" ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <script type="module">
+    import { InteractiveQuiz } from './js/tests.js';
+    window.quiz = new InteractiveQuiz({
+      quizType: 'autoestima',
+      totalQuestions: 5
+    });
+  </script>
+</body>
+</html>

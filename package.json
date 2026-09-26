@@ -1,0 +1,25 @@
+{
+  "name": "web-erika-rodriguez",
+  "version": "1.0.0",
+  "description": "Sitio web oficial y plataforma de tests interactivos de la Dra. Erika Rodríguez (Psicología Clínica y Desarrollo Personal)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "psicologia",
+    "desarrollo-personal",
+    "orientacion-vocacional",
+    "proyectate",
+    "arteterapia",
+    "tests-interactivos"
+  ],
+  "author": "Erika Rodríguez",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

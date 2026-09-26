@@ -1,0 +1,302 @@
+/* ==========================================================================
+   TESTS INTERACTIVOS — ESTILOS COMPARTIDOS
+   Vocacional, Autoestima y Lenguajes del Amor
+   ========================================================================== */
+
+.quiz-page {
+  background-color: var(--bone);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-header {
+  background: var(--white);
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-header a.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quiz-header img {
+  height: 44px;
+  width: auto;
+}
+
+.quiz-back-btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quiz-back-btn:hover {
+  color: var(--abyssal);
+}
+
+.quiz-main-container {
+  max-width: 760px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.quiz-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-card);
+  position: relative;
+}
+
+/* Barra de Progreso */
+.quiz-progress-wrap {
+  margin-bottom: 32px;
+}
+
+.quiz-progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.quiz-progress-bar {
+  height: 8px;
+  background-color: var(--border-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--mint) 100%);
+  width: 0%;
+  transition: width 0.35s ease;
+  border-radius: var(--radius-full);
+}
+
+/* Steps */
+.quiz-step {
+  display: none;
+}
+
+.quiz-step.active {
+  display: block;
+  animation: quizSlideIn 0.35s var(--ease-koto);
+}
+
+@keyframes quizSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quiz-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  background: var(--soft-foam);
+  color: var(--abyssal);
+  border-radius: var(--radius-xs);
+  margin-bottom: 16px;
+}
+
+.quiz-step h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 800;
+  color: var(--abyssal);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.quiz-step p.lead-text {
+  font-size: 1.05rem;
+  color: #4A6366;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.quiz-question-title {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--abyssal);
+  margin-bottom: 24px;
+  line-height: 1.35;
+}
+
+/* Opciones de respuesta */
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quiz-opt-btn {
+  width: 100%;
+  text-align: left;
+  background: var(--bone);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--void);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-koto);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.quiz-opt-btn:hover {
+  background: var(--soft-foam);
+  border-color: var(--teal);
+  transform: translateX(4px);
+}
+
+.quiz-opt-btn.selected {
+  background: #E6F7F4;
+  border-color: var(--mint-dark);
+  color: var(--abyssal);
+  font-weight: 600;
+}
+
+.opt-indicator {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #A2BFC3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.quiz-opt-btn:hover .opt-indicator {
+  border-color: var(--teal);
+}
+
+.quiz-opt-btn.selected .opt-indicator {
+  background: var(--mint-dark);
+  border-color: var(--mint-dark);
+}
+
+.quiz-opt-btn.selected .opt-indicator::after {
+  content: '✓';
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Formulario de Captura de Lead */
+.lead-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 24px 0 28px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--abyssal);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #CFD8DC;
+  border-radius: var(--radius-sm);
+  font-size: 0.98rem;
+  background-color: var(--white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(35, 122, 132, 0.15);
+}
+
+/* Ajustes intl-tel-input */
+.iti {
+  width: 100%;
+}
+
+.privacy-note {
+  font-size: 0.8rem;
+  color: #718096;
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* Pantalla de Éxito / Diagnóstico */
+.diagnosis-result-box {
+  background: var(--soft-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.diagnosis-result-box h4 {
+  font-family: var(--font-display);
+  color: var(--abyssal);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.diagnosis-result-box p {
+  color: #3C5052;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .quiz-card {
+    padding: 30px 20px;
+  }
+}

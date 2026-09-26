@@ -1,0 +1,21 @@
+# Dependencias
+node_modules/
+
+# Compilación estática
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Respaldo local
+legacy/
+
+# Variables de entorno
+.env
+.env.local

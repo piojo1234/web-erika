@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de los 5 Lenguajes del Amor — Dra. Erika Rodríguez</title>
+  <meta name="description" content="Cuestionario de dilemas de pareja para identificar tu lenguaje principal de amor y fortalecer la comunicación afectiva.">
+  
+  <!-- intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tests.css">
+</head>
+<body class="quiz-page">
+
+  <!-- Header del Test -->
+  <header class="quiz-header">
+    <div class="quiz-header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logo.png" alt="Erika Rodríguez" onerror="this.style.display='none'">
+        <span class="logo-text" style="font-size: 1rem;">Erika Rodríguez</span>
+      </a>
+      <a href="index.html" class="quiz-back-btn">← Volver al Inicio</a>
+    </div>
+  </header>
+
+  <main class="quiz-main-container">
+    <div class="quiz-card">
+      
+      <!-- Barra de Progreso -->
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-info">
+          <span id="quiz-progress-text">Inicio</span>
+          <span>Diagnóstico de Pareja & Vínculos</span>
+        </div>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Paso 0: Introducción -->
+      <div class="quiz-step active" id="step-intro">
+        <span class="quiz-badge">TEST GRATUITO • RELACIONES</span>
+        <h2>Test: Descubre tu Lenguaje del Amor Principal</h2>
+        <p class="lead-text">
+          Este cuestionario de dilemas clínicos te ayudará a identificar tu forma primordial de dar y recibir afecto (Palabras de afirmación, Tiempo de calidad, Actos de servicio, Regalos o Contacto físico) para transformar la comunicación con tu pareja.
+        </p>
+        <button class="btn btn-terracota btn-lg" onclick="quiz.goToStep(1)">
+          Comenzar Test de Lenguajes 🤍
+        </button>
+      </div>
+
+      <!-- Pregunta 1 -->
+      <div class="quiz-step" id="step-q1">
+        <span class="quiz-badge">DILEMA 1 DE 8</span>
+        <h3 class="quiz-question-title">1. ¿Qué prefieres recibir de forma espontánea?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Palabras: Recibir una nota inesperada de aprecio sincero')">
+            <span>A. Recibir una nota inesperada de aprecio sincero.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Contacto: Que me abrace por la espalda sin motivo aparente')">
+            <span>B. Que me abrace por la espalda o me acaricie sin motivo aparente.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="quiz-step" id="step-q2">
+        <span class="quiz-badge">DILEMA 2 DE 8</span>
+        <h3 class="quiz-question-title">2. ¿Qué te hace sentir más valorado/a y cuidado/a?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'Servicio: Que me ayude con una tarea pesada en casa sin pedirlo')">
+            <span>A. Que me ayude con una tarea pesada en casa sin tener que pedírselo.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'Tiempo: Pasar un fin de semana a solas sin interrupciones')">
+            <span>B. Pasar una tarde o fin de semana a solas sin pantallas ni distracciones.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="quiz-step" id="step-q3">
+        <span class="quiz-badge">DILEMA 3 DE 8</span>
+        <h3 class="quiz-question-title">3. Si tuvieras un día difícil o agotador, ¿qué preferirías que hiciera tu pareja?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Detalle: Traerme un pequeño detalle o mi postre favorito')">
+            <span>A. Traerme un pequeño detalle o mi postre favorito de sorpresa.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Tiempo: Sentarse a escucharme pacientemente sin juzgar')">
+            <span>B. Sentarse a mirarme a los ojos y escucharme pacientemente sin juzgar.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="quiz-step" id="step-q4">
+        <span class="quiz-badge">DILEMA 4 DE 8</span>
+        <h3 class="quiz-question-title">4. Te sientes más conectado/a en la relación cuando...</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'Palabras: Me dice lo mucho que me admira y me lo recuerda')">
+            <span>A. Me dice lo mucho que me admira y me reconoce verbalmente.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'Contacto: Me da un masaje relajante o busca el contacto físico')">
+            <span>B. Me da un masaje relajante, me toma de la mano o busca el afecto físico.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="quiz-step" id="step-q5">
+        <span class="quiz-badge">DILEMA 5 DE 8</span>
+        <h3 class="quiz-question-title">5. Valoras más profundamente cuando tu pareja...</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Detalle: Me sorprende con algo que vio y pensó en mí')">
+            <span>A. Me sorprende con un regalo o algo que vio y pensó en mí.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Servicio: Se encarga de hacer la cena porque sabe que tuve un día pesado')">
+            <span>B. Se encarga de la cena o resuelve un pendiente sabiendo que estoy agotado/a.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 6 -->
+      <div class="quiz-step" id="step-q6">
+        <span class="quiz-badge">DILEMA 6 DE 8</span>
+        <h3 class="quiz-question-title">6. Durante una cita o salida juntos, lo fundamental para ti es...</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(7, 'Contacto: Estar cerca físicamente y tomarnos de la mano')">
+            <span>A. Estar cerca físicamente, tomarnos de la mano y abrazarnos.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(7, 'Tiempo: Conversación profunda sin mirar el teléfono móvil')">
+            <span>B. Conversación profunda con atención plena, sin mirar el celular.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 7 -->
+      <div class="quiz-step" id="step-q7">
+        <span class="quiz-badge">DILEMA 7 DE 8</span>
+        <h3 class="quiz-question-title">7. ¿Qué ausencia te dolería más de forma constante?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(8, 'Palabras: Que casi nunca me reconozca verbalmente mis esfuerzos')">
+            <span>A. Que casi nunca me exprese admiración o reconozca mis esfuerzos en voz alta.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(8, 'Servicio: Que nunca tenga la iniciativa de ayudarme en las cargas cotidianas')">
+            <span>B. Que nunca tenga iniciativa para apoyarme en las cargas cotidianas del hogar.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 8 -->
+      <div class="quiz-step" id="step-q8">
+        <span class="quiz-badge">DILEMA 8 DE 8</span>
+        <h3 class="quiz-question-title">8. En una fecha especial de aniversario, preferirías...</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(9, 'Regalo: Recibir un regalo significativo que llevaba tiempo queriendo')">
+            <span>A. Recibir un detalle significativo que represente que me conoce bien.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(9, 'Carta: Que me escriba una carta expresando todo lo que siente')">
+            <span>B. Que me escriba una carta o mensaje íntimo expresando todo lo que siente por mí.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Paso Formulario: Captura de Lead -->
+      <div class="quiz-step" id="step-form">
+        <span class="quiz-badge">PASO FINAL</span>
+        <h2>¡Tus Dilemas están Listos!</h2>
+        <p class="lead-text">
+          Ingresa tus datos para procesar tu lenguaje del amor predominante y recibir la guía clínica de comunicación afectiva.
+        </p>
+
+        <form id="quizLeadForm" class="lead-form-grid">
+          <div class="form-group">
+            <label for="lead_name">Tu Nombre Completo *</label>
+            <input type="text" id="lead_name" required placeholder="Ej: Diana Mendoza">
+          </div>
+
+          <div class="form-group">
+            <label for="lead_email">Tu Correo Electrónico *</label>
+            <input type="email" id="lead_email" required placeholder="diana@ejemplo.com">
+          </div>
+
+          <div class="form-group">
+            <label for="lead_phone">Tu Número de WhatsApp *</label>
+            <input type="tel" id="lead_phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lead_reto">¿Cuál es tu mayor desafío de comunicación en pareja hoy? (Opcional)</label>
+            <textarea id="lead_reto" rows="2" placeholder="Ej: Sentimos que hablamos diferentes idiomas o nos desconectamos con facilidad..."></textarea>
+          </div>
+
+          <button type="submit" id="btnSubmitQuiz" class="btn btn-terracota btn-lg" style="width: 100%; margin-top: 10px;">
+            Descubrir Mi Lenguaje del Amor ↗
+          </button>
+
+          <p class="privacy-note">
+            🔒 Confidencialidad garantizada.
+          </p>
+        </form>
+      </div>
+
+      <!-- Paso Éxito -->
+      <div class="quiz-step" id="step-success" style="text-align: center;">
+        <div style="font-size: 50px; margin-bottom: 16px;">🤍</div>
+        <h2>¡Diagnóstico de Vínculos Generado!</h2>
+        <p class="lead-text" style="margin-bottom: 20px;">
+          Tus respuestas han sido tabuladas bajo el marco de los lenguajes afectivos.
+        </p>
+
+        <div class="diagnosis-result-box">
+          <h4>Recomendación para tu Relación:</h4>
+          <p>
+            Tus elecciones demuestran una alta sensibilidad hacia la <strong>presencia intencional y la validación afectiva</strong>. Cuando las parejas no conocen el lenguaje mutuo, suelen dar amor de la forma en que a ellos les gustaría recibirlo, generando frustración involuntaria. Aprender a traducir estos códigos repara puentes rápidamente.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px;">
+          <a id="btnWhatsAppResult" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Recibir Informe Completo por WhatsApp 💬
+          </a>
+          <a href="index.html#contacto" class="btn btn-secondary">
+            Consultar por Terapia de Pareja o Individual ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <script type="module">
+    import { InteractiveQuiz } from './js/tests.js';
+    window.quiz = new InteractiveQuiz({
+      quizType: 'amor',
+      totalQuestions: 8
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de Orientación Vocacional & Propósito — Dra. Erika Rodríguez</title>
+  <meta name="description" content="Test clínico interactivo de orientación vocacional. Descubre tus fortalezas y clarifica tu rumbo profesional en 2 minutos.">
+  
+  <!-- intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tests.css">
+</head>
+<body class="quiz-page">
+
+  <!-- Header del Test -->
+  <header class="quiz-header">
+    <div class="quiz-header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logo.png" alt="Erika Rodríguez" onerror="this.style.display='none'">
+        <span class="logo-text" style="font-size: 1rem;">Erika Rodríguez</span>
+      </a>
+      <a href="index.html" class="quiz-back-btn">← Volver al Inicio</a>
+    </div>
+  </header>
+
+  <main class="quiz-main-container">
+    <div class="quiz-card">
+      
+      <!-- Barra de Progreso -->
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-info">
+          <span id="quiz-progress-text">Inicio</span>
+          <span>Diagnóstico Confidencial</span>
+        </div>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Paso 0: Introducción -->
+      <div class="quiz-step active" id="step-intro">
+        <span class="quiz-badge">TEST GRATUITO • 2 MINUTOS</span>
+        <h2>Test de Orientación Vocacional & Propósito</h2>
+        <p class="lead-text">
+          Diseñado por la psicóloga clínica Erika Rodríguez para identificar tus talentos intrínsecos, desbloquear las dudas sobre tu carrera y darte claridad sobre tus siguientes pasos profesionales.
+        </p>
+        <button class="btn btn-terracota btn-lg" onclick="quiz.goToStep(1)">
+          Comenzar Test Vocacional 🧭
+        </button>
+      </div>
+
+      <!-- Pregunta 1 -->
+      <div class="quiz-step" id="step-q1">
+        <span class="quiz-badge">PREGUNTA 1 DE 5</span>
+        <h3 class="quiz-question-title">1. ¿Cuál de estas situaciones describe mejor tu momento actual?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Mi trabajo actual no tiene propósito y me drena la energía')">
+            <span>Siento que mi trabajo actual no tiene propósito y me drena la energía.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Tengo muchas ideas pero me cuesta enfocarme')">
+            <span>Tengo muchas ideas e intereses, pero me cuesta enfocarme en una sola dirección.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Sé lo que me gusta pero temo que no sea viable')">
+            <span>Sé lo que me gusta, pero tengo miedo de que no sea económicamente viable.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(2, 'Quiero hacer una transición laboral y no sé por dónde empezar')">
+            <span>Quiero hacer una transición laboral o emprender, pero no sé por dónde empezar.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="quiz-step" id="step-q2">
+        <span class="quiz-badge">PREGUNTA 2 DE 5</span>
+        <h3 class="quiz-question-title">2. Cuando imaginas tu día a día laboral ideal, ¿qué es lo más importante para ti?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'Libertad y flexibilidad horaria para crear')">
+            <span>Libertad y flexibilidad horaria para crear y tomar decisiones propias.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'Impacto directo y sentir que transformo vidas')">
+            <span>Impacto directo en la vida de otras personas y sentir que aporto algo valioso.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'Estabilidad, estructura clara y crecimiento')">
+            <span>Estabilidad económica, estructura clara y crecimiento profesional constante.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(3, 'Retos intelectuales y resolución de problemas complejos')">
+            <span>Retos intelectuales, resolución de problemas complejos y aprendizaje continuo.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="quiz-step" id="step-q3">
+        <span class="quiz-badge">PREGUNTA 3 DE 5</span>
+        <h3 class="quiz-question-title">3. ¿Cuál es el mayor obstáculo que sientes que te frena para dar el paso hacia tu verdadera vocación?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Miedo a la inestabilidad o a perder lo construido')">
+            <span>Miedo a la inestabilidad económica o a perder lo que ya he construido.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Síndrome del impostor: pensar que no estoy listo/a')">
+            <span>Síndrome del impostor: pensar que no tengo suficientes habilidades o credenciales.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Presión familiar o social sobre lo que debería hacer')">
+            <span>Presión familiar o social sobre lo que "debería" hacer para encajar.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(4, 'Falta de un plan claro estructurado paso a paso')">
+            <span>Falta de un plan claro y estructurado paso a paso para ejecutar.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="quiz-step" id="step-q4">
+        <span class="quiz-badge">PREGUNTA 4 DE 5</span>
+        <h3 class="quiz-question-title">4. Si pudieras resolver una sola cosa en los próximos 90 días, ¿cuál sería?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'Tener certeza absoluta de mi vocación')">
+            <span>Tener certeza total de hacia dónde dirigir mi carrera profesional.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'Diseñar una transición segura sin arriesgar ingresos')">
+            <span>Diseñar una estrategia segura para transicionar sin poner en riesgo mis ingresos.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'Superar la procrastinación y el miedo al juicio')">
+            <span>Superar la procrastinación y el miedo al juicio para lanzar mi proyecto.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(5, 'Aprender a poner límites a la sobreexigencia y el burnout')">
+            <span>Aprender a poner límites a la sobreexigencia laboral y el agotamiento mental.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="quiz-step" id="step-q5">
+        <span class="quiz-badge">PREGUNTA 5 DE 5</span>
+        <h3 class="quiz-question-title">5. ¿Qué nivel de compromiso tienes hoy para transformar tu rumbo profesional?</h3>
+        <div class="quiz-options-list">
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Totalmente listo/a para invertir en mi claridad')">
+            <span>Totalmente listo/a para invertir tiempo, energía y recursos en mi claridad.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Muy interesado/a buscando la guía correcta')">
+            <span>Muy interesado/a, buscando el acompañamiento adecuado para dar el paso con seguridad.</span>
+            <div class="opt-indicator"></div>
+          </button>
+          <button class="quiz-opt-btn" onclick="quiz.goToStep(6, 'Explorando opciones con calma')">
+            <span>Explorando opciones con calma y recopilando información.</span>
+            <div class="opt-indicator"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Paso Formulario: Captura de Lead -->
+      <div class="quiz-step" id="step-form">
+        <span class="quiz-badge">PASO FINAL</span>
+        <h2>¡Respuestas Registradas!</h2>
+        <p class="lead-text">
+          Ingresa tus datos para procesar tu diagnóstico y enviarte las recomendaciones clínicas personalizadas de la Dra. Erika Rodríguez.
+        </p>
+
+        <form id="quizLeadForm" class="lead-form-grid">
+          <div class="form-group">
+            <label for="lead_name">Tu Nombre Completo *</label>
+            <input type="text" id="lead_name" required placeholder="Ej: Marcela Gómez">
+          </div>
+
+          <div class="form-group">
+            <label for="lead_email">Tu Correo Electrónico *</label>
+            <input type="email" id="lead_email" required placeholder="marcela@ejemplo.com">
+          </div>
+
+          <div class="form-group">
+            <label for="lead_phone">Tu Número de WhatsApp *</label>
+            <input type="tel" id="lead_phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lead_reto">¿Cuál es tu profesión o carrera actual? (Opcional)</label>
+            <input type="text" id="lead_reto" placeholder="Ej: Contadora, diseñador gráfico, estudiante...">
+          </div>
+
+          <button type="submit" id="btnSubmitQuiz" class="btn btn-terracota btn-lg" style="width: 100%; margin-top: 10px;">
+            Generar Mi Diagnóstico Personalizado ↗
+          </button>
+
+          <p class="privacy-note">
+            🔒 Tus datos están 100% seguros bajo confidencialidad profesional. No hacemos spam.
+          </p>
+        </form>
+      </div>
+
+      <!-- Paso Éxito -->
+      <div class="quiz-step" id="step-success" style="text-align: center;">
+        <div style="font-size: 50px; margin-bottom: 16px;">✨</div>
+        <h2>¡Diagnóstico Vocacional Listo!</h2>
+        <p class="lead-text" style="margin-bottom: 20px;">
+          Tus respuestas han sido procesadas con éxito por el sistema de la Dra. Erika Rodríguez.
+        </p>
+
+        <div class="diagnosis-result-box">
+          <h4>Recomendación Inicial:</h4>
+          <p>
+            Tu perfil indica una necesidad prioritaria de <strong>alineación entre valores personales y actividad económica</strong>. La sensación de estancamiento que experimentas suele estar vinculada a una desconexión entre tus fortalezas naturales y las demandas de tu entorno actual.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px;">
+          <a id="btnWhatsAppResult" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Recibir Reporte Detallado por WhatsApp 💬
+          </a>
+          <a href="proyectate.html" class="btn btn-secondary">
+            Conoce el Programa Proyéctate ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <script type="module">
+    import { InteractiveQuiz } from './js/tests.js';
+    window.quiz = new InteractiveQuiz({
+      quizType: 'vocacional',
+      totalQuestions: 5
+    });
+  </script>
+</body>
+</html>
