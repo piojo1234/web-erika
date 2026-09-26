@@ -911,6 +911,128 @@ header.site-header.scrolled {
 }
 
 /* ==========================================================================
+   SECCIONES ESPECIALIZADAS: AUTOESTIMA, PAREJA Y VOCACIONAL INTERDISCIPLINAR
+   ========================================================================== */
+.audience-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s var(--ease-koto);
+  position: relative;
+}
+
+.audience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--teal);
+}
+
+.audience-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--soft-foam);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.audience-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--abyssal);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.audience-card p {
+  font-size: 0.94rem;
+  color: #556E72;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.audience-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.audience-bullet-list li {
+  font-size: 0.88rem;
+  color: #385154;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.audience-bullet-list li span.check {
+  color: var(--mint-dark);
+  font-weight: bold;
+}
+
+/* Feature Box: Terapia de Pareja */
+.feature-split-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.feature-split-content {
+  padding: 50px 44px;
+}
+
+.feature-split-visual {
+  background: linear-gradient(145deg, #1A5B64 0%, #0D3B42 100%);
+  color: var(--bone);
+  padding: 50px 44px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Banner Interdisciplinar Vocacional */
+.interdisciplinary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(35, 122, 132, 0.12);
+  color: var(--teal);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .feature-split-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
    HUB DE TESTS INTERACTIVOS
    ========================================================================== */
 .tests-hub-grid {
