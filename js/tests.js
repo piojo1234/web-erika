@@ -100,7 +100,7 @@ export class InteractiveQuiz {
     const originalText = btn ? btn.innerText : 'Enviar';
 
     if (btn) {
-      btn.innerText = "Generando tu diagnóstico clínico...";
+      btn.innerText = "Generando tu diagnóstico...";
       btn.disabled = true;
     }
 
@@ -156,8 +156,8 @@ export class InteractiveQuiz {
     const waBtn = document.getElementById('btnWhatsAppResult');
     if (waBtn) {
       const summaryText = encodeURIComponent(
-        `Hola Dra. Erika, acabo de completar el test ${this.quizType.toUpperCase()} en su sitio web.\n\n` +
-        `Mi nombre es ${payload.nombre} y me gustaría recibir mi reporte clínico y conocer los siguientes pasos.`
+        `Hola Erika, acabo de completar el test ${this.quizType.toUpperCase()} en su sitio web.\n\n` +
+        `Mi nombre es ${payload.nombre} y me gustaría recibir mi reporte personalizado y conocer los siguientes pasos.`
       );
       waBtn.href = `https://wa.me/573176588270?text=${summaryText}`;
     }

@@ -1,6 +1,6 @@
-# Sitio Web Oficial — Dra. Erika Rodríguez (Psicología & Desarrollo Personal)
+# Sitio Web Oficial — Erika Rodríguez, Psicóloga (Universidad Cooperativa de Colombia)
 
-Plataforma web estática moderna, modular y de alto rendimiento que incluye el sitio principal de la Dra. Erika Rodríguez, la landing page de ventas del programa insignia **Proyéctate**, y tres **tests clínicos interactivos** con captura de leads y diagnóstico personalizado.
+Plataforma web estática moderna, modular y de alto rendimiento que incluye el sitio principal de la psicóloga Erika Rodríguez, la landing page de ventas del programa insignia **Proyéctate**, y tres **tests interactivos de autoconocimiento** con captura de leads, acreditación ReTHUS y diagnóstico personalizado.
 
 ---
 
@@ -106,7 +106,7 @@ git push -u origin main
 
 ## ⚙️ Tecnologías Utilizadas
 - **HTML5 Semántico**: Con metadatos optimizados para SEO y accesibilidad.
-- **Vanilla CSS (Design Tokens)**: Paleta cromática clínica editorial (Petróleo profundo `#0D3B42`, Menta `#38C7B2`, Teal `#1A5B64`, Terracota `#D8836C`).
+- **Vanilla CSS (Design Tokens)**: Paleta cromática editorial de bienestar y salud (Petróleo profundo `#0D3B42`, Menta `#38C7B2`, Teal `#1A5B64`, Terracota `#D8836C`).
 - **JavaScript Moderno (ES Modules)**: Cero dependencias pesadas, alta velocidad de carga.
 - **Vite 6**: Empaquetador ultrarrápido y servidor local.
 - **intl-tel-input**: Validación y formateo de teléfonos internacionales con bandera.

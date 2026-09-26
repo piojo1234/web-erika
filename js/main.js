@@ -71,7 +71,7 @@ function initGoogleReviews() {
       author: "María Pérez",
       time: "hace 2 semanas",
       rating: 5,
-      text: "Excelente servicio y calidez humana. La Dra. Erika me ayudó a encontrar claridad en un momento de mucha ansiedad y transición personal. Totalmente recomendada."
+      text: "Excelente servicio y calidez humana. La psicóloga Erika me ayudó a encontrar claridad en un momento de mucha ansiedad y transición personal. Totalmente recomendada."
     },
     {
       author: "Juan Rodríguez",

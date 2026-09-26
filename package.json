@@ -1,7 +1,7 @@
 {
   "name": "web-erika-rodriguez",
   "version": "1.0.0",
-  "description": "Sitio web oficial y plataforma de tests interactivos de la Dra. Erika Rodríguez (Psicología Clínica y Desarrollo Personal)",
+  "description": "Sitio web oficial y plataforma de tests interactivos de Erika Rodríguez, Psicóloga egresada de la Universidad Cooperativa de Colombia (Psicología y Desarrollo Personal)",
   "private": true,
   "type": "module",
   "scripts": {

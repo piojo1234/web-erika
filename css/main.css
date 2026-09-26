@@ -1,6 +1,6 @@
 /* ==========================================================================
    ERIKA RODRÍGUEZ — BRAND OS & CORE DESIGN SYSTEM
-   Sistema de diseño editorial y clínico para Psicología & Desarrollo Personal
+   Sistema de diseño editorial para Psicología & Desarrollo Personal
    ========================================================================== */
 
 /* Importación de fuentes tipográficas */
@@ -9,7 +9,7 @@
 :root {
   /* Paleta cromática Koto Brand OS */
   --abyssal: #0D3B42;         /* Petróleo Profundo: Autoridad y calma */
-  --teal: #1A5B64;            /* Teal Clínico: Confianza terapéutica */
+  --teal: #1A5B64;            /* Teal Profundo: Confianza terapéutica */
   --mint: #38C7B2;            /* Menta Eléctrico: Vitalidad y florecimiento */
   --mint-dark: #229988;       /* Menta Profundo para contraste accesible */
   --ocean: #5CA2B8;           /* Brisa Oceánica */
@@ -601,6 +601,37 @@ header.site-header.scrolled {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
+.hero-photo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 1;
+}
+
+.hero-photo-inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 27, 30, 0.92) 100%);
+  z-index: 2;
+}
+
+.hero-badge-floating {
+  z-index: 3;
+}
+
+.hero-photo-caption {
+  position: relative;
+  z-index: 3;
+}
+
 .hero-photo-caption h3 {
   font-family: var(--font-display);
   font-size: 1.35rem;
@@ -612,6 +643,61 @@ header.site-header.scrolled {
   font-size: 0.88rem;
   color: var(--soft-foam);
   margin: 0;
+}
+
+.rethus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(56, 199, 178, 0.2);
+  border: 1px solid var(--mint);
+  color: var(--mint);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.credentials-box {
+  background: var(--white);
+  border: 1.5px solid var(--border-card);
+  border-left: 4px solid var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 22px 24px;
+  margin-top: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.credentials-box h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--abyssal);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.credential-item {
+  font-size: 0.86rem;
+  color: #4A6366;
+  line-height: 1.45;
+}
+
+.credential-item strong {
+  color: var(--abyssal);
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 2px;
 }
 
 /* ==========================================================================
