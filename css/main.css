@@ -113,11 +113,25 @@ button, input, textarea, select {
   background-color: var(--soft-bg);
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
+  background-image: 
+    url('../assets/images/bg-brain-contour.svg'),
+    radial-gradient(circle at 10% 40%, rgba(26, 91, 100, 0.05) 0%, transparent 45%);
+  background-repeat: no-repeat;
+  background-position: right -80px center, center;
+  background-size: 720px auto, auto;
 }
 
 .section-dark {
   background-color: var(--abyssal);
   color: var(--bone);
+  background-image: 
+    url('../assets/images/bg-brain-dark.svg'),
+    radial-gradient(circle at 85% 25%, rgba(56, 199, 178, 0.16) 0%, transparent 55%),
+    radial-gradient(circle at 10% 85%, rgba(136, 216, 192, 0.08) 0%, transparent 45%);
+  background-repeat: no-repeat;
+  background-position: center center, center, center;
+  background-size: cover, auto, auto;
+  position: relative;
 }
 
 .section-header {
@@ -478,6 +492,14 @@ header.site-header.scrolled {
   padding: 70px 0 80px;
   position: relative;
   overflow: hidden;
+  background-color: var(--bone);
+  background-image: 
+    url('../assets/images/bg-brain-waves.svg'),
+    radial-gradient(circle at 88% 18%, rgba(136, 216, 192, 0.22) 0%, transparent 48%),
+    radial-gradient(circle at 10% 75%, rgba(199, 93, 62, 0.08) 0%, transparent 42%);
+  background-repeat: no-repeat;
+  background-position: center top, center, center;
+  background-size: cover, auto, auto;
 }
 
 .hero-grid {
@@ -913,6 +935,34 @@ header.site-header.scrolled {
 /* ==========================================================================
    SECCIONES ESPECIALIZADAS: AUTOESTIMA, PAREJA Y VOCACIONAL INTERDISCIPLINAR
    ========================================================================== */
+#autoestima {
+  background-image: 
+    url('../assets/images/bg-synapse-network.svg'),
+    radial-gradient(circle at 92% 35%, rgba(136, 216, 192, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 8% 70%, rgba(26, 91, 100, 0.04) 0%, transparent 40%);
+  background-repeat: no-repeat;
+  background-position: center center, center, center;
+  background-size: cover, auto, auto;
+}
+
+#pareja {
+  background-image: 
+    url('../assets/images/bg-brain-waves.svg'),
+    radial-gradient(circle at 15% 30%, rgba(199, 93, 62, 0.05) 0%, transparent 45%);
+  background-repeat: no-repeat;
+  background-position: center bottom, center;
+  background-size: 130% auto, auto;
+}
+
+#tests {
+  background-image: 
+    url('../assets/images/bg-brain-contour.svg'),
+    radial-gradient(circle at 5% 40%, rgba(136, 216, 192, 0.12) 0%, transparent 45%);
+  background-repeat: no-repeat;
+  background-position: left -60px center, center;
+  background-size: 680px auto, auto;
+}
+
 .audience-card {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -1389,6 +1439,13 @@ footer.site-footer {
   border-top: 1px solid var(--border-card);
   border-bottom: 1px solid var(--border-card);
   padding: 96px 0;
+  background-image: 
+    url('../assets/images/bg-brain-waves.svg'),
+    radial-gradient(circle at 90% 80%, rgba(199, 93, 62, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 10% 20%, rgba(136, 216, 192, 0.1) 0%, transparent 40%);
+  background-repeat: no-repeat;
+  background-position: center center, center, center;
+  background-size: cover, auto, auto;
 }
 
 /* Club Exclusivo VIP Callout Banner */

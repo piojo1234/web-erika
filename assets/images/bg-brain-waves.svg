@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="brainWaveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A5B64" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#88D8C0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#C75D3E" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="brainWaveGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#88D8C0" stop-opacity="0.14"/>
+      <stop offset="50%" stop-color="#1A5B64" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#2D3130" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Curvas Orgánicas Tipo Circunvoluciones Cerebrales & Ondas Mentales -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- Grupo 1: Contornos Superiores / Hemisferio -->
+    <path d="M-100,180 C120,60 280,240 450,140 C620,40 760,220 950,110 C1140,0 1280,180 1540,80" 
+          stroke="url(#brainWaveGrad1)" stroke-width="2.5" fill="none"/>
+    <path d="M-80,220 C140,100 300,280 470,180 C640,80 780,260 970,150 C1160,40 1300,220 1560,120" 
+          stroke="url(#brainWaveGrad1)" stroke-width="1.8" stroke-dasharray="8 6" fill="none"/>
+    <path d="M-60,260 C160,140 320,320 490,220 C660,120 800,300 990,190 C1180,80 1320,260 1580,160" 
+          stroke="url(#brainWaveGrad1)" stroke-width="1.2" fill="none"/>
+
+    <!-- Grupo 2: Circunvoluciones y Ondas Centrales (Lóbulos y Plasticidad) -->
+    <path d="M-120,460 C80,340 180,560 380,440 C580,320 680,540 880,410 C1080,280 1180,500 1380,380 C1480,320 1550,420 1600,390" 
+          stroke="url(#brainWaveGrad2)" stroke-width="2.2" fill="none"/>
+    <path d="M-100,500 C100,380 200,600 400,480 C600,360 700,580 900,450 C1100,320 1200,540 1400,420 C1500,360 1570,460 1620,430" 
+          stroke="url(#brainWaveGrad2)" stroke-width="1.5" fill="none"/>
+    <path d="M-80,540 C120,420 220,640 420,520 C620,400 720,620 920,490 C1120,360 1220,580 1420,460 C1520,400 1590,500 1640,470" 
+          stroke="url(#brainWaveGrad1)" stroke-width="1" stroke-dasharray="5 5" fill="none"/>
+
+    <!-- Grupo 3: Topografía Inferior Fluida (Ondas Theta / Calma) -->
+    <path d="M-50,720 C180,640 340,820 560,700 C780,580 920,780 1140,660 C1360,540 1480,720 1620,650" 
+          stroke="url(#brainWaveGrad1)" stroke-width="2" fill="none"/>
+    <path d="M-30,760 C200,680 360,860 580,740 C800,620 940,820 1160,700 C1380,580 1500,760 1640,690" 
+          stroke="url(#brainWaveGrad2)" stroke-width="1.4" fill="none"/>
+
+    <!-- Lóbulos / Bucles Orgánicos Cerebrales en los Costados -->
+    <path d="M1250,220 C1320,180 1380,240 1350,310 C1320,380 1240,360 1210,430 C1180,500 1260,570 1340,540 C1420,510 1450,600 1400,670" 
+          stroke="url(#brainWaveGrad1)" stroke-width="1.6" fill="none"/>
+    <path d="M1280,250 C1340,210 1390,260 1365,320 C1340,380 1270,365 1245,425 C1220,485 1285,545 1350,520 C1415,495 1435,570 1395,630" 
+          stroke="url(#brainWaveGrad2)" stroke-width="1" fill="none"/>
+  </g>
+</svg>

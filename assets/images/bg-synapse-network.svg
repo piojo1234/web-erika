@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#88D8C0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#88D8C0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="synapseLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A5B64" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#88D8C0" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#C75D3E" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke-linecap="round">
+    <!-- Red Sináptica / Neuronas Conectadas en la esquina superior izquierda -->
+    <path d="M60,80 Q160,120 220,90 T340,160 T420,240 T540,210" stroke="url(#synapseLine)" stroke-width="1.5" fill="none"/>
+    <path d="M120,40 Q180,180 280,170 T380,310 T490,340" stroke="url(#synapseLine)" stroke-width="1.2" stroke-dasharray="4 4" fill="none"/>
+    <path d="M220,90 L280,170 M340,160 L380,310 M420,240 L490,340" stroke="url(#synapseLine)" stroke-width="1" fill="none"/>
+
+    <!-- Nodos neuronales (sinapsis activas) -->
+    <circle cx="60" cy="80" r="14" fill="url(#nodeGlow)"/>
+    <circle cx="60" cy="80" r="3.5" fill="#1A5B64" fill-opacity="0.2"/>
+
+    <circle cx="220" cy="90" r="18" fill="url(#nodeGlow)"/>
+    <circle cx="220" cy="90" r="4" fill="#1A5B64" fill-opacity="0.25"/>
+
+    <circle cx="340" cy="160" r="16" fill="url(#nodeGlow)"/>
+    <circle cx="340" cy="160" r="3.5" fill="#88D8C0" fill-opacity="0.4"/>
+
+    <circle cx="280" cy="170" r="12" fill="url(#nodeGlow)"/>
+    <circle cx="280" cy="170" r="3" fill="#1A5B64" fill-opacity="0.2"/>
+
+    <circle cx="420" cy="240" r="20" fill="url(#nodeGlow)"/>
+    <circle cx="420" cy="240" r="4.5" fill="#88D8C0" fill-opacity="0.4"/>
+
+    <circle cx="380" cy="310" r="14" fill="url(#nodeGlow)"/>
+    <circle cx="380" cy="310" r="3" fill="#1A5B64" fill-opacity="0.2"/>
+
+    <circle cx="540" cy="210" r="18" fill="url(#nodeGlow)"/>
+    <circle cx="540" cy="210" r="4" fill="#C75D3E" fill-opacity="0.25"/>
+
+    <!-- Red Sináptica / Hemisferio y Pensamiento en la esquina inferior derecha -->
+    <path d="M960,680 Q1060,610 1140,650 T1260,580 T1380,620" stroke="url(#synapseLine)" stroke-width="1.5" fill="none"/>
+    <path d="M1020,780 Q1120,700 1200,740 T1320,680 T1410,720" stroke="url(#synapseLine)" stroke-width="1.2" stroke-dasharray="6 4" fill="none"/>
+    <path d="M1140,650 L1200,740 M1260,580 L1320,680" stroke="url(#synapseLine)" stroke-width="1" fill="none"/>
+
+    <circle cx="960" cy="680" r="16" fill="url(#nodeGlow)"/>
+    <circle cx="960" cy="680" r="3.5" fill="#1A5B64" fill-opacity="0.2"/>
+
+    <circle cx="1140" cy="650" r="20" fill="url(#nodeGlow)"/>
+    <circle cx="1140" cy="650" r="4.5" fill="#88D8C0" fill-opacity="0.4"/>
+
+    <circle cx="1200" cy="740" r="14" fill="url(#nodeGlow)"/>
+    <circle cx="1200" cy="740" r="3" fill="#1A5B64" fill-opacity="0.2"/>
+
+    <circle cx="1260" cy="580" r="22" fill="url(#nodeGlow)"/>
+    <circle cx="1260" cy="580" r="5" fill="#C75D3E" fill-opacity="0.25"/>
+
+    <circle cx="1320" cy="680" r="18" fill="url(#nodeGlow)"/>
+    <circle cx="1320" cy="680" r="4" fill="#88D8C0" fill-opacity="0.4"/>
+
+    <circle cx="1380" cy="620" r="14" fill="url(#nodeGlow)"/>
+    <circle cx="1380" cy="620" r="3" fill="#1A5B64" fill-opacity="0.2"/>
+  </g>
+</svg>

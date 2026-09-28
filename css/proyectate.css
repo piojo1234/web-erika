@@ -16,8 +16,13 @@
 /* Hero Proyéctate */
 .pry-hero {
   padding: 80px 0 90px;
-  background: radial-gradient(circle at 80% 20%, rgba(69, 162, 152, 0.12) 0%, transparent 60%),
-              linear-gradient(180deg, var(--bone) 0%, var(--soft-bg) 100%);
+  background: 
+    url('../assets/images/bg-synapse-network.svg'),
+    radial-gradient(circle at 80% 20%, rgba(69, 162, 152, 0.16) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bone) 0%, var(--soft-bg) 100%);
+  background-repeat: no-repeat;
+  background-position: center center, center, center;
+  background-size: cover, auto, auto;
   position: relative;
   overflow: hidden;
 }

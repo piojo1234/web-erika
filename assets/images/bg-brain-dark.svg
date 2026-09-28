@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="darkSynapse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#88D8C0" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#38C7B2" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    </linearGradient>
+    <radialGradient id="darkNodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#88D8C0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#88D8C0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- Ondas Cerebrales Luminiscentes en Fondo Oscuro -->
+    <path d="M-100,240 C140,120 280,320 480,200 C680,80 820,300 1020,180 C1220,60 1380,260 1560,140" 
+          stroke="url(#darkSynapse)" stroke-width="2" fill="none"/>
+    <path d="M-80,280 C160,160 300,360 500,240 C700,120 840,340 1040,220 C1240,100 1400,300 1580,180" 
+          stroke="url(#darkSynapse)" stroke-width="1.2" stroke-dasharray="6 6" fill="none"/>
+
+    <path d="M-60,580 C180,440 320,680 540,540 C760,400 900,640 1120,500 C1340,360 1460,560 1600,460" 
+          stroke="url(#darkSynapse)" stroke-width="1.8" fill="none"/>
+    
+    <!-- Red Sináptica Conectada -->
+    <path d="M180,150 L260,260 L380,210 L480,310" stroke="url(#darkSynapse)" stroke-width="1.2" fill="none"/>
+    <circle cx="180" cy="150" r="14" fill="url(#darkNodeGlow)"/>
+    <circle cx="180" cy="150" r="3.5" fill="#88D8C0" fill-opacity="0.7"/>
+    <circle cx="260" cy="260" r="16" fill="url(#darkNodeGlow)"/>
+    <circle cx="260" cy="260" r="4" fill="#38C7B2" fill-opacity="0.8"/>
+    <circle cx="380" cy="210" r="12" fill="url(#darkNodeGlow)"/>
+    <circle cx="380" cy="210" r="3" fill="#88D8C0" fill-opacity="0.6"/>
+    <circle cx="480" cy="310" r="18" fill="url(#darkNodeGlow)"/>
+    <circle cx="480" cy="310" r="4.5" fill="#88D8C0" fill-opacity="0.9"/>
+
+    <path d="M1060,650 L1180,560 L1280,630 L1390,540" stroke="url(#darkSynapse)" stroke-width="1.2" stroke-dasharray="4 4" fill="none"/>
+    <circle cx="1060" cy="650" r="14" fill="url(#darkNodeGlow)"/>
+    <circle cx="1060" cy="650" r="3.5" fill="#88D8C0" fill-opacity="0.6"/>
+    <circle cx="1180" cy="560" r="18" fill="url(#darkNodeGlow)"/>
+    <circle cx="1180" cy="560" r="4.5" fill="#38C7B2" fill-opacity="0.8"/>
+    <circle cx="1280" cy="630" r="14" fill="url(#darkNodeGlow)"/>
+    <circle cx="1280" cy="630" r="3.5" fill="#88D8C0" fill-opacity="0.7"/>
+    <circle cx="1390" cy="540" r="20" fill="url(#darkNodeGlow)"/>
+    <circle cx="1390" cy="540" r="5" fill="#88D8C0" fill-opacity="0.9"/>
+  </g>
+</svg>
