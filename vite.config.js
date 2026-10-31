@@ -15,7 +15,8 @@ export default defineConfig({
         curso: resolve(__dirname, 'curso/index.html'),
         testVocacional: resolve(__dirname, 'test-vocacional.html'),
         testAutoestima: resolve(__dirname, 'test-autoestima.html'),
-        testLenguajeAmor: resolve(__dirname, 'test-lenguaje-amor.html')
+        testLenguajeAmor: resolve(__dirname, 'test-lenguaje-amor.html'),
+        guiaAutoestima: resolve(__dirname, 'guia-calmar-autocritica-autoestima.html')
       }
     }
   },
