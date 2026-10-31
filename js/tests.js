@@ -138,6 +138,10 @@ export class InteractiveQuiz {
 
     const notes = document.getElementById('lead_reto')?.value.trim() || '';
 
+    // Pre-calcular diagnóstico para incluirlo en la notificación de correo y CSV
+    const tempPayload = { nombre: name, comentario_adicional: notes };
+    const diagnosis = this.computeDiagnosis(tempPayload);
+
     // Estructura del Lead
     const payload = {
       tipo_test: this.quizType,
@@ -145,6 +149,8 @@ export class InteractiveQuiz {
       email: email,
       telefono: phone,
       comentario_adicional: notes,
+      diagnostico: diagnosis.profileTitle,
+      scoreLabel: diagnosis.scoreLabel,
       respuestas: this.userAnswers,
       origen_url: window.location.href,
       user_agent: navigator.userAgent,
@@ -159,19 +165,29 @@ export class InteractiveQuiz {
       localStorage.setItem('erika_all_leads', JSON.stringify(history));
     } catch (e) {}
 
-    // Envío asíncrono al Webhook (silencioso si no responde)
+    // Envío seguro a la API de Hostinger (Guarda en CSV y envía correo a erika.rod.psicologa@gmail.com)
     try {
-      if (this.webhookUrl && this.webhookUrl.startsWith('http')) {
+      await fetch('/api/guardar-lead.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(err => {
+        console.warn("Aviso API Hostinger:", err);
+      });
+    } catch (err) {
+      console.warn("Aviso envío API:", err);
+    }
+
+    // Envío adicional a webhook secundario si estuviese configurado
+    try {
+      if (this.webhookUrl && this.webhookUrl.startsWith('http') && !this.webhookUrl.includes('erikarodriguezpsicologia.com')) {
         await fetch(this.webhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(payload)
-        }).catch(err => {
-          console.warn("Webhook n8n en segundo plano:", err);
-        });
+        }).catch(err => {});
       }
     } catch (err) {
-      console.warn("Aviso webhook:", err);
     } finally {
       this.showSuccess(payload);
 

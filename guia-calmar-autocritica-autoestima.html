@@ -643,6 +643,23 @@
         localStorage.setItem('erika_guide_leads', JSON.stringify(leads));
       } catch (err) {}
 
+      // Envío seguro a la API de Hostinger (Guarda en CSV y envía correo a erika.rod.psicologa@gmail.com)
+      try {
+        fetch('/api/guardar-lead.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            tipo_test: 'miniguia_autocritica_pdf',
+            nombre: name,
+            email: email,
+            telefono: phone,
+            comentario_adicional: 'Descarga Miniguía PDF desde ' + source,
+            diagnostico: 'Miniguía: 5 Claves para Calmar la Autocrítica',
+            origen_url: window.location.href
+          })
+        }).catch(err => console.warn('Aviso API:', err));
+      } catch (e) {}
+
       // Evento GA4
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'generate_lead', {
