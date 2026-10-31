@@ -9,7 +9,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        psicologaVillavicencio: resolve(__dirname, 'psicologa-villavicencio.html'),
         proyectate: resolve(__dirname, 'proyectate.html'),
+        previewProyectate: resolve(__dirname, 'preview-landing-proyectate.html'),
+        curso: resolve(__dirname, 'curso/index.html'),
         testVocacional: resolve(__dirname, 'test-vocacional.html'),
         testAutoestima: resolve(__dirname, 'test-autoestima.html'),
         testLenguajeAmor: resolve(__dirname, 'test-lenguaje-amor.html')

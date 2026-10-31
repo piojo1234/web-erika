@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activación y Personalización del Manual del Migrante — Dra. Erika Rodríguez</title>
+  <meta name="description" content="Personaliza tu Manual del Migrante o prepáralo con una dedicatoria especial de regalo.">
+  
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="curso.css">
+  <style>
+    .checkout-wrap {
+      max-width: 680px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+    .checkout-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--teal-border);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .checkout-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal-dark);
+      background: var(--teal-light);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+    .checkout-title {
+      font-family: var(--font-heading);
+      font-size: 1.65rem;
+      color: var(--abyssal);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .checkout-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .summary-box {
+      background: var(--beige-soft);
+      border: 1px solid var(--beige-dark);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .summary-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+    .summary-price {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: var(--terracota);
+      font-size: 1.15rem;
+    }
+    /* Selector de Destinatario */
+    .recipient-selector {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .radio-card {
+      border: 2px solid var(--beige-dark);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .radio-card:hover {
+      border-color: var(--teal-primary);
+      background: #F8FBFB;
+    }
+    .radio-card.active {
+      border-color: var(--teal-primary);
+      background: var(--teal-light);
+    }
+    .radio-card input {
+      position: absolute;
+      opacity: 0;
+    }
+    .radio-card-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .radio-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-label span.req {
+      color: var(--terracota);
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      border: 1.5px solid var(--teal-border);
+      border-radius: var(--radius-md);
+      outline: none;
+      transition: var(--transition);
+      box-sizing: border-box;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--teal-primary);
+      box-shadow: 0 0 0 3px rgba(26, 91, 100, 0.15);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .btn-activate {
+      width: 100%;
+      padding: 15px;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--terracota);
+      border: none;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(199, 93, 56, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-activate:hover {
+      background: var(--terracota-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(199, 93, 56, 0.4);
+    }
+    /* Pantalla Resultado */
+    .success-panel {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+      animation: fadeIn 0.4s ease;
+    }
+    .success-icon {
+      font-size: 3.5rem;
+      margin-bottom: 12px;
+    }
+    .success-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--abyssal);
+      margin-bottom: 8px;
+    }
+    .success-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .link-display-box {
+      background: var(--beige-soft);
+      border: 1px dashed var(--teal-primary);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      color: var(--teal-dark);
+      word-break: break-all;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .btn-grid-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-whatsapp-share {
+      background: #25D366;
+      color: #FFF;
+      text-decoration: none;
+      padding: 13px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-whatsapp-share:hover {
+      background: #1EBE5D;
+      transform: translateY(-2px);
+    }
+    .btn-view-preview {
+      background: var(--teal-primary);
+      color: #FFF;
+      text-decoration: none;
+      padding: 13px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-view-preview:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+    }
+    .btn-copy-link {
+      background: transparent;
+      border: 1.5px solid var(--teal-primary);
+      color: var(--teal-primary);
+      padding: 11px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-copy-link:hover {
+      background: var(--teal-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-wrapper">
+        <div class="brand-info">
+          <span class="brand-title">Erika Rodríguez</span>
+          <span class="brand-subtitle">Psicología & Desarrollo Personal</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="../index.html" class="btn-header-back">← Volver al Sitio</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-wrap">
+    
+    <div class="checkout-card" id="formCard">
+      <span class="checkout-badge">Paso de Activación • Post-Compra</span>
+      <h1 class="checkout-title">Personaliza el Manual del Migrante</h1>
+      <p class="checkout-subtitle">
+        Indícanos a nombre de quién quedará registrado este cuaderno terapéutico para personalizar cada día del proceso.
+      </p>
+
+      <div class="summary-box">
+        <div>
+          <span class="summary-label">Manual del Migrante (7 Días Guiados)</span>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Acceso privado ilimitado + Cuaderno interactivo</div>
+        </div>
+        <div class="summary-price">$12 USD</div>
+      </div>
+
+      <form id="activationForm">
+        
+        <!-- Selección: ¿Para quién es el cuaderno? -->
+        <div class="form-group">
+          <label class="form-label">¿A nombre de quién queda el manual? <span class="req">*</span></label>
+          <div class="recipient-selector">
+            
+            <label class="radio-card active" id="cardSelf">
+              <input type="radio" name="recipientType" value="self" checked>
+              <span class="radio-card-title">👤 Es para mí</span>
+              <span class="radio-card-desc">Soy yo quien vivirá el proceso de 7 días.</span>
+            </label>
+
+            <label class="radio-card" id="cardGift">
+              <input type="radio" name="recipientType" value="gift">
+              <span class="radio-card-title">🎁 Es un regalo</span>
+              <span class="radio-card-desc">Para un familiar, amiga o pareja migrante.</span>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Campos para "Es para mí" -->
+        <div id="selfFields">
+          <div class="form-group">
+            <label class="form-label" for="buyerName">¿Cómo te llamas o cómo quieres que te llame Erika? <span class="req">*</span></label>
+            <input type="text" id="buyerName" class="form-input" placeholder="Ej: Laura Gómez" value="Laura Gómez" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="buyerEmail">Tu Correo Electrónico</label>
+            <input type="email" id="buyerEmail" class="form-input" placeholder="tu@correo.com" value="laura@ejemplo.com">
+          </div>
+        </div>
+
+        <!-- Campos dinámicos para "Es un regalo" -->
+        <div id="giftFields" style="display: none;">
+          <div class="form-group">
+            <label class="form-label" for="giftRecipientName">Nombre de quien recibe el regalo <span class="req">*</span></label>
+            <input type="text" id="giftRecipientName" class="form-input" placeholder="Ej: María (o como le gusta que le digan)">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="giftSenderName">Tu nombre (quien le regala el manual) <span class="req">*</span></label>
+            <input type="text" id="giftSenderName" class="form-input" placeholder="Ej: Carlos (tu hermano)">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="giftMessage">Dedicatoria especial con cariño (opcional)</label>
+            <textarea id="giftMessage" class="form-textarea" placeholder="Escribe un mensaje de apoyo para que lo lea apenas abra su cuaderno... (Ej: Hermanita, sé que este comienzo no ha sido fácil pero creo en ti con todo mi corazón. Te amo.)"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-activate">
+          <span>Generar y Activar Cuaderno Personalizado ✨</span>
+        </button>
+
+      </form>
+    </div>
+
+    <!-- Panel de Éxito / Entrega del Enlace -->
+    <div class="checkout-card success-panel" id="successPanel">
+      <div class="success-icon" id="successEmoji">✨</div>
+      <h2 class="success-title" id="successTitle">¡El Manual ha sido Personalizado!</h2>
+      <p class="success-desc" id="successDesc">
+        Tu enlace único de acceso ya está configurado con toda la información.
+      </p>
+
+      <div class="link-display-box" id="generatedLinkBox">
+        http://localhost:3000/curso/index.html?token=demo...
+      </div>
+
+      <div class="btn-grid-actions">
+        <!-- Botón para ver cómo lo ve -->
+        <a id="btnPreviewCourse" href="#" class="btn-view-preview" target="_blank">
+          Abrir Cuaderno Personalizado ↗
+        </a>
+
+        <!-- Botón de compartir en WhatsApp (solo si es regalo) -->
+        <a id="btnShareWhatsApp" href="#" target="_blank" class="btn-whatsapp-share" style="display: none;">
+          Enviar por WhatsApp a la Destinataria 💬
+        </a>
+
+        <!-- Botón copiar enlace -->
+        <button type="button" id="btnCopyLink" class="btn-copy-link">
+          Copiar Enlace al Portapapeles 📋
+        </button>
+
+        <button type="button" id="btnReconfigure" class="btn-modal-cancel" style="margin-top: 6px;">
+          ← Probar otra personalización
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const cardSelf = document.getElementById('cardSelf');
+    const cardGift = document.getElementById('cardGift');
+    const selfFields = document.getElementById('selfFields');
+    const giftFields = document.getElementById('giftFields');
+    const formCard = document.getElementById('formCard');
+    const successPanel = document.getElementById('successPanel');
+    const activationForm = document.getElementById('activationForm');
+
+    const buyerNameInput = document.getElementById('buyerName');
+    const giftRecipientInput = document.getElementById('giftRecipientName');
+    const giftSenderInput = document.getElementById('giftSenderName');
+    const giftMessageInput = document.getElementById('giftMessage');
+
+    const successEmoji = document.getElementById('successEmoji');
+    const successTitle = document.getElementById('successTitle');
+    const successDesc = document.getElementById('successDesc');
+    const generatedLinkBox = document.getElementById('generatedLinkBox');
+    const btnPreviewCourse = document.getElementById('btnPreviewCourse');
+    const btnShareWhatsApp = document.getElementById('btnShareWhatsApp');
+    const btnCopyLink = document.getElementById('btnCopyLink');
+    const btnReconfigure = document.getElementById('btnReconfigure');
+
+    let currentType = 'self';
+
+    // Cambio entre "Para mí" y "Es un regalo"
+    cardSelf.addEventListener('click', () => {
+      currentType = 'self';
+      cardSelf.classList.add('active');
+      cardGift.classList.remove('active');
+      selfFields.style.display = 'block';
+      giftFields.style.display = 'none';
+      buyerNameInput.required = true;
+      giftRecipientInput.required = false;
+      giftSenderInput.required = false;
+    });
+
+    cardGift.addEventListener('click', () => {
+      currentType = 'gift';
+      cardGift.classList.add('active');
+      cardSelf.classList.remove('active');
+      selfFields.style.display = 'none';
+      giftFields.style.display = 'block';
+      buyerNameInput.required = false;
+      giftRecipientInput.required = true;
+      giftSenderInput.required = true;
+    });
+
+    // Envío del Formulario
+    activationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let targetUrl = '';
+      const baseUrl = window.location.origin + '/curso/index.html';
+
+      if (currentType === 'self') {
+        const name = buyerNameInput.value.trim() || 'Valiente';
+        targetUrl = `${baseUrl}?token=demo&nombre=${encodeURIComponent(name)}`;
+
+        successEmoji.innerText = '🌱';
+        successTitle.innerText = `¡Tu Manual está listo, ${name}!`;
+        successDesc.innerText = `Tu cuaderno de trabajo personal ha sido preparado. Puedes ingresar ahora mismo a iniciar tu Día 1.`;
+        btnShareWhatsApp.style.display = 'none';
+        btnPreviewCourse.innerText = `Entrar a mi Cuaderno del Día 1 →`;
+
+      } else {
+        const recipient = giftRecipientInput.value.trim() || 'Valiente';
+        const sender = giftSenderInput.value.trim() || 'Alguien que te ama';
+        const msg = giftMessageInput.value.trim();
+
+        let params = `?token=demo&nombre=${encodeURIComponent(recipient)}&regalo_de=${encodeURIComponent(sender)}`;
+        if (msg) {
+          params += `&mensaje=${encodeURIComponent(msg)}`;
+        }
+        targetUrl = `${baseUrl}${params}`;
+
+        successEmoji.innerText = '🎁';
+        successTitle.innerText = `¡El regalo para ${recipient} está listo!`;
+        successDesc.innerText = `Hemos creado el cuaderno con tu dedicatoria especial. Comparte el enlace con ${recipient} para que empiece su camino de reconstrucción.`;
+        
+        btnPreviewCourse.innerText = `Ver cómo lo verá ${recipient} 👁️`;
+        btnShareWhatsApp.style.display = 'flex';
+
+        const waText = encodeURIComponent(
+          `¡Hola ${recipient}! Te he preparado un regalo muy especial con todo mi cariño:\n\n` +
+          `🌱 El Manual del Migrante: 7 Días de Reconstrucción Emocional con la psicóloga Erika Rodríguez.\n\n` +
+          `${msg ? '💌 "' + msg + '"\n\n' : ''}` +
+          `Puedes abrir tu cuaderno personal aquí:\n${targetUrl}`
+        );
+        btnShareWhatsApp.href = `https://wa.me/?text=${waText}`;
+      }
+
+      generatedLinkBox.innerText = targetUrl;
+      btnPreviewCourse.href = targetUrl;
+
+      formCard.style.display = 'none';
+      successPanel.style.display = 'block';
+    });
+
+    // Copiar enlace
+    btnCopyLink.addEventListener('click', () => {
+      const link = generatedLinkBox.innerText;
+      navigator.clipboard.writeText(link).then(() => {
+        btnCopyLink.innerText = '¡Copiado con Éxito! ✓';
+        setTimeout(() => btnCopyLink.innerText = 'Copiar Enlace al Portapapeles 📋', 2500);
+      });
+    });
+
+    // Reconfigurar
+    btnReconfigure.addEventListener('click', () => {
+      formCard.style.display = 'block';
+      successPanel.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

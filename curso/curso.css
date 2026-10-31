@@ -1,0 +1,1308 @@
+/* ==========================================================================
+   MANUAL DEL MIGRANTE: 7 DÍAS DE RECONSTRUCCIÓN EMOCIONAL
+   Portal WebApp — Dra. Erika Rodríguez (Psicología & Desarrollo Personal)
+   Manual de Marca:
+   - Fondo principal: Blanco Lino (#F9F8F6)
+   - Color primario: Verde Petróleo / Teal (#388A8E)
+   - Acentos y Botones CTA: Terracota Suave (#D8836C) con hover (#C0705B)
+   - Tarjetas y Contenedores: Beige Suave (#EFECE6)
+   - Tipografías: Montserrat (H1/H2) e Inter (cuerpo de texto)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Paleta Oficial Erika Rodríguez */
+  --bg-lino: #F9F8F6;
+  --teal-primary: #388A8E;
+  --teal-dark: #276265;
+  --teal-light: #E8F3F3;
+  --teal-border: rgba(56, 138, 142, 0.22);
+  --terracota: #D8836C;
+  --terracota-hover: #C0705B;
+  --terracota-light: #FBF0ED;
+  --beige-card: #EFECE6;
+  --beige-hover: #E7E3DC;
+  --beige-dark: #DDD8CE;
+  --text-main: #242E30;
+  --text-muted: #57686A;
+  --white: #FFFFFF;
+  --success: #2E7D32;
+  --danger: #C62828;
+
+  /* Tipografías */
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Bordes y Sombras */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --shadow-soft: 0 4px 18px rgba(36, 46, 48, 0.05);
+  --shadow-card: 0 8px 24px rgba(56, 138, 142, 0.08);
+  --shadow-terracota: 0 6px 18px rgba(216, 131, 108, 0.32);
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset y Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-lino);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header de la WebApp */
+.app-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--beige-dark);
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-soft);
+}
+
+.header-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-logo-img {
+  height: 40px;
+  width: auto;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--teal-primary);
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-header-back {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--teal-primary);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--teal-border);
+  transition: var(--transition);
+}
+
+.btn-header-back:hover {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+}
+
+/* Contenedor Principal */
+.app-container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 18px 60px;
+  flex-grow: 1;
+}
+
+/* Banner de Bienvenida y Progreso */
+.welcome-hero {
+  background: linear-gradient(135deg, var(--white) 0%, var(--teal-light) 100%);
+  border: 1px solid var(--teal-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-hero::after {
+  content: '🌿';
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 5rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--teal-primary);
+  background: var(--white);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+  border: 1px solid var(--teal-border);
+}
+
+.welcome-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.welcome-desc {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+
+/* Barra de Progreso de 7 Días */
+.progress-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  border: 1px solid var(--beige-dark);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.progress-label {
+  color: var(--teal-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.progress-percentage {
+  color: var(--terracota);
+  font-weight: 700;
+}
+
+.progress-track {
+  height: 10px;
+  background-color: var(--beige-card);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal-primary) 0%, var(--terracota) 100%);
+  border-radius: var(--radius-pill);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Navegación por Pestañas de los 7 Días (Mobile First) */
+.days-nav-wrapper {
+  margin-bottom: 24px;
+}
+
+.days-nav-title {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.days-tabs-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.days-tabs-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.days-tabs-scroll::-webkit-scrollbar-thumb {
+  background: var(--beige-dark);
+  border-radius: 4px;
+}
+
+.day-tab-btn {
+  flex: 0 0 auto;
+  background: var(--white);
+  border: 1.5px solid var(--beige-dark);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 125px;
+}
+
+.day-tab-btn:hover {
+  border-color: var(--teal-primary);
+  background: var(--teal-light);
+  transform: translateY(-2px);
+}
+
+.day-tab-btn.active {
+  background: var(--teal-primary);
+  border-color: var(--teal-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.day-tab-btn.active .day-tab-num,
+.day-tab-btn.active .day-tab-name {
+  color: var(--white);
+}
+
+.day-tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-tab-num {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--teal-primary);
+}
+
+.day-tab-check {
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--beige-card);
+  color: var(--text-muted);
+}
+
+.day-tab-btn.completed .day-tab-check {
+  background: var(--terracota);
+  color: var(--white);
+}
+
+.day-tab-btn.active.completed .day-tab-check {
+  background: var(--white);
+  color: var(--teal-primary);
+}
+
+.day-tab-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+/* Tarjeta Principal del Día Actual */
+.day-content-card {
+  background: var(--white);
+  border: 1px solid var(--beige-dark);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  box-shadow: var(--shadow-soft);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.day-header-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--terracota);
+  background: var(--terracota-light);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.day-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+/* Concepto Terapéutico (Tarjeta Beige Suave #EFECE6) */
+.concept-card {
+  background: var(--beige-card);
+  border-left: 5px solid var(--teal-primary);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  margin-bottom: 28px;
+}
+
+.concept-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.concept-icon {
+  font-size: 1.25rem;
+}
+
+.concept-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.concept-text {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* Sección de Audio */
+.audio-section {
+  background: var(--bg-lino);
+  border: 1px solid var(--beige-dark);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  margin-bottom: 32px;
+}
+
+.audio-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.audio-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--teal-primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.audio-meta h4 {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.audio-meta p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.audio-player-element {
+  width: 100%;
+  border-radius: var(--radius-pill);
+  outline: none;
+  margin-top: 6px;
+}
+
+.audio-player-element::-webkit-media-controls-panel {
+  background-color: var(--beige-card);
+}
+
+.audio-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  text-align: right;
+}
+
+/* Preguntas y Textareas Dinámicos */
+.questions-section {
+  margin-bottom: 32px;
+}
+
+.questions-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.questions-helper-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.question-group {
+  margin-bottom: 24px;
+}
+
+.question-label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.question-textarea {
+  width: 100%;
+  min-height: 120px;
+  background-color: var(--white);
+  border: 1.5px solid var(--beige-dark);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  resize: vertical;
+  transition: var(--transition);
+}
+
+.question-textarea:focus {
+  outline: none;
+  border-color: var(--teal-primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(56, 138, 142, 0.15);
+}
+
+.question-textarea::placeholder {
+  color: #9AA7A8;
+  font-size: 0.9rem;
+}
+
+/* Acciones y Botón Terracota CTA */
+.actions-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--beige-dark);
+}
+
+.btn-cta-terracota {
+  background: var(--terracota);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: var(--shadow-terracota);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.btn-cta-terracota:hover {
+  background: var(--terracota-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(216, 131, 108, 0.4);
+}
+
+.btn-cta-terracota:active {
+  transform: translateY(0);
+}
+
+.btn-cta-terracota:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.nav-buttons-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-nav-prev,
+.btn-nav-next {
+  background: var(--bg-lino);
+  border: 1px solid var(--beige-dark);
+  color: var(--teal-dark);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-nav-prev:hover,
+.btn-nav-next:hover {
+  background: var(--beige-card);
+  border-color: var(--teal-primary);
+}
+
+.save-status-msg {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Pantalla de "Enlace no válido" */
+.invalid-token-screen {
+  background: var(--white);
+  border: 1px solid var(--beige-dark);
+  border-radius: var(--radius-lg);
+  padding: 48px 28px;
+  max-width: 620px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.invalid-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  color: var(--terracota);
+}
+
+.invalid-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-bottom: 14px;
+}
+
+.invalid-desc {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.invalid-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-whatsapp-help {
+  background: #25D366;
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-whatsapp-help:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+}
+
+.btn-demo-mode {
+  background: var(--bg-lino);
+  color: var(--teal-primary);
+  border: 1px solid var(--teal-border);
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-demo-mode:hover {
+  background: var(--teal-light);
+}
+
+/* Toast Notifications */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--teal-dark);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(39, 98, 101, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.toast-notification.success {
+  background: var(--teal-primary);
+  border-left: 4px solid var(--terracota);
+}
+
+.toast-notification.error {
+  background: #B71C1C;
+  border-left: 4px solid #FF8A80;
+}
+
+/* Footer */
+.app-footer {
+  background: var(--white);
+  border-top: 1px solid var(--beige-dark);
+  padding: 24px 20px;
+  margin-top: auto;
+  text-align: center;
+}
+
+.app-footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-author {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--teal-primary);
+  margin-bottom: 4px;
+}
+
+.footer-creds {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Media Queries para Pantallas Mayores */
+@media (min-width: 768px) {
+  .app-container {
+    padding: 36px 24px 80px;
+  }
+
+  .actions-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn-cta-terracota {
+    width: auto;
+    min-width: 280px;
+  }
+
+  .invalid-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   PERSONALIZACIÓN & DEDICATORIAS DE REGALO
+   ========================================================================== */
+
+.user-highlight-name {
+  color: var(--teal-primary);
+  border-bottom: 2px dashed var(--terracota-border);
+  padding-bottom: 2px;
+}
+
+.btn-edit-name {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  vertical-align: middle;
+}
+
+.btn-edit-name:hover {
+  transform: scale(1.18);
+  background: var(--teal-light);
+}
+
+/* Tarjeta de Dedicatoria de Regalo */
+.gift-dedication-box {
+  background: linear-gradient(135deg, #FFF9F2 0%, #FFF1E6 100%);
+  border: 1px solid #FFD8BE;
+  border-left: 4px solid var(--terracota);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 18px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(199, 93, 56, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+.gift-icon-badge {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.gift-content {
+  flex: 1;
+}
+
+.gift-kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--terracota);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.gift-message {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.gift-author {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Modal / Dialog para Personalizar Nombre */
+.name-modal {
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(13, 59, 66, 0.25);
+  margin: auto;
+  background: transparent;
+}
+
+.name-modal::backdrop {
+  background: rgba(13, 59, 66, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.name-modal-card {
+  background: var(--white);
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--teal-border);
+}
+
+.name-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.name-modal-icon {
+  font-size: 1.6rem;
+}
+
+.name-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--teal-primary);
+  margin: 0;
+}
+
+.name-modal-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.name-modal-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border: 1.5px solid var(--teal-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: var(--transition);
+}
+
+.name-modal-input:focus {
+  border-color: var(--teal-primary);
+  box-shadow: 0 0 0 3px rgba(26, 91, 100, 0.15);
+}
+
+.name-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.btn-modal-cancel {
+  background: transparent;
+  border: 1px solid var(--beige-dark);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-modal-cancel:hover {
+  background: var(--beige-soft);
+  color: var(--text-dark);
+}
+
+.btn-modal-save {
+  background: var(--terracota);
+  color: var(--white);
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-modal-save:hover {
+  background: var(--terracota-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   BANNER & MODAL DE GRADUACIÓN / BOTIQUÍN EMOCIONAL
+   ========================================================================== */
+
+.graduation-banner {
+  background: linear-gradient(135deg, #0D3B42 0%, #17545B 100%);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-top: 24px;
+  box-shadow: 0 10px 30px rgba(13, 59, 66, 0.25);
+  animation: fadeIn 0.4s ease;
+}
+
+.graduation-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.graduation-banner-text {
+  max-width: 640px;
+}
+
+.graduation-kicker {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #38C7B2;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.graduation-banner-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.graduation-banner-desc {
+  font-size: 0.9rem;
+  color: #E0F2F1;
+  line-height: 1.5;
+}
+
+/* Modal de Graduación */
+.graduation-modal {
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: 900px;
+  width: 94%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.graduation-modal::backdrop {
+  background: rgba(13, 59, 66, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.graduation-modal-card {
+  background: var(--bg-lino);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  max-height: 88vh;
+  overflow-y: auto;
+  border: 1px solid var(--teal-border);
+}
+
+.grad-modal-header {
+  text-align: center;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--beige-dark);
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.grad-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.grad-seal {
+  font-size: 2.2rem;
+}
+
+.grad-btn-close {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.grad-btn-close:hover {
+  color: var(--terracota);
+}
+
+.grad-kicker {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: var(--teal-primary);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.grad-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--teal-dark);
+  margin: 8px 0;
+}
+
+.grad-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.grad-feature-card {
+  background: var(--white);
+  border: 1px solid var(--beige-dark);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+.grad-feature-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.grad-feature-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+
+.grad-feature-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.grad-live-card {
+  border-left: 5px solid var(--teal-primary);
+  background: #F4FBFB;
+}
+
+.btn-whatsapp-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+}
+
+.btn-whatsapp-confirm:hover {
+  background: #1EBE5D;
+  transform: translateY(-1px);
+}
+
+.grad-botiquin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-print-botiquin {
+  background: var(--terracota);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-print-botiquin:hover {
+  background: var(--terracota-hover);
+  transform: translateY(-1px);
+}
+
+.botiquin-compiled-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.botiquin-day-item {
+  background: var(--bg-lino);
+  border: 1px solid var(--beige-dark);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+}
+
+.botiquin-day-title {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-bottom: 6px;
+}
+
+.botiquin-day-concept {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 3px solid var(--teal-primary);
+}
+
+.botiquin-day-answer {
+  background: var(--white);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+.botiquin-question-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+
+.grad-therapy-bridge {
+  border-left: 5px solid #2E7D32;
+  background: #F8FAF8;
+}
+
+.grad-therapy-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-therapy-cta {
+  background: var(--teal-dark);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn-therapy-cta:hover {
+  background: var(--teal-primary);
+}
+
+.grad-footer-row {
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Reglas de Impresión para PDF */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #botiquinPrintArea, #botiquinPrintArea * {
+    visibility: visible;
+  }
+  #botiquinPrintArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none;
+    border: none;
+  }
+  .btn-print-botiquin {
+    display: none !important;
+  }
+}

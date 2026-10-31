@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual del Migrante: 7 Días de Reconstrucción Emocional — Dra. Erika Rodríguez</title>
+  <meta name="description" content="Plataforma interactiva del Manual del Migrante: 7 días de reflexiones guiadas, audios terapéuticos y reconstrucción de la autoestima lejos de casa. Diseñado por la Psicóloga Erika Rodríguez (UCC).">
+  
+  <!-- Tipografías: Montserrat e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos del Manual de Marca -->
+  <link rel="stylesheet" href="curso.css">
+  
+  <!-- Supabase Cloud CDN v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Encabezado de la WebApp -->
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-wrapper">
+        <img src="../assets/images/logo.png" alt="Dra. Erika Rodríguez" class="brand-logo-img" onerror="this.style.display='none'">
+        <div class="brand-info">
+          <span class="brand-title">Erika Rodríguez</span>
+          <span class="brand-subtitle">Psicología & Desarrollo Personal</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="../index.html" class="btn-header-back">← Volver al Sitio</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PANTALLA: ENLACE NO VÁLIDO (Se muestra si el token no existe o es inválido) -->
+  <section id="invalidTokenScreen" class="invalid-token-screen" style="display: none;">
+    <div class="invalid-icon">🔒</div>
+    <h2 class="invalid-title">Enlace de Acceso No Válido o Expirado</h2>
+    <p id="invalidReasonText" class="invalid-desc">
+      Para resguardar tu privacidad e intimidad en este proceso de sanación, el Manual del Migrante requiere un enlace personal único e intransferible.
+    </p>
+    <div class="invalid-actions">
+      <a href="https://wa.me/573219315490?text=Hola%20Erika,%20necesito%20ayuda%20con%20mi%20enlace%20de%20acceso%20al%20Manual%20del%20Migrante" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-help">
+        Solicitar Ayuda por WhatsApp 💬
+      </a>
+      <a href="index.html?token=demo" class="btn-demo-mode">
+        Explorar en Modo Demostración ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- PORTAL PRINCIPAL DEL MANUAL DEL MIGRANTE -->
+  <main id="validPortal" class="app-container" style="display: none;">
+    
+    <!-- Hero de Bienvenida y Barra de Progreso -->
+    <header class="welcome-hero">
+      <span class="welcome-badge">🌱 CUADERNO DE TRABAJO EMOCIONAL</span>
+      <h1 class="welcome-title">
+        ¡Bienvenida a tu Manual, <span id="userName" class="user-highlight-name">Valiente</span> 
+        <button type="button" id="btnEditName" class="btn-edit-name" title="Personalizar cómo quieres que te llame Erika" aria-label="Personalizar nombre">✏️</button>!
+      </h1>
+      <p class="welcome-desc">
+        Un espacio seguro e íntimo creado para acompañarte en tu duelo migratorio, desmontar la culpa y reconstruir tu confianza en esta nueva etapa de tu vida.
+      </p>
+
+      <!-- Tarjeta de Dedicatoria si el Cuaderno es un Regalo -->
+      <section id="giftDedicationBox" class="gift-dedication-box" style="display: none;">
+        <div class="gift-icon-badge">🎁</div>
+        <div class="gift-content">
+          <span class="gift-kicker">Dedicatoria Especial de Regalo</span>
+          <p class="gift-message" id="giftMessageText">"..."</p>
+          <span class="gift-author" id="giftAuthorText">— Con todo el cariño de alguien que cree en ti</span>
+        </div>
+      </section>
+
+      <!-- Barra de Progreso de 7 Días -->
+      <div class="progress-card">
+        <div class="progress-header">
+          <span class="progress-label">El Camino de Reconstrucción de <span class="user-inline-name">Valiente</span>:</span>
+          <span class="progress-percentage" id="progressText">0 de 7 días completados (0%)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- Banner de Graduación y Botiquín (Visible al completar los 7 días) -->
+      <section id="graduationBanner" class="graduation-banner" style="display: none;">
+        <div class="graduation-banner-inner">
+          <div class="graduation-banner-text">
+            <span class="graduation-kicker">🎉 ¡7 DE 7 DÍAS COMPLETADOS!</span>
+            <h2 class="graduation-banner-title">Tu Botiquín Emocional y Pase al Círculo en Vivo están listos</h2>
+            <p class="graduation-banner-desc">
+              Has recorrido los 7 días de reconstrucción. Ya puedes consultar o descargar tu Botiquín Emocional personalizado en PDF y confirmar tu asistencia al próximo encuentro grupal con Erika.
+            </p>
+          </div>
+          <button type="button" id="btnOpenGraduationBanner" class="btn-cta-terracota">
+            <span>Ver Mi Botiquín &amp; Pase al Círculo en Vivo 🕊️</span>
+          </button>
+        </div>
+      </section>
+    </header>
+
+    <!-- Navegación de los 7 Días (Pestañas Horizontales) -->
+    <nav class="days-nav-wrapper" aria-label="Navegación de Días del Manual">
+      <div class="days-nav-title">Navegación de los 7 Días</div>
+      <div class="days-tabs-scroll" id="daysTabsList">
+        <!-- Generado dinámicamente en curso.js -->
+      </div>
+    </nav>
+
+    <!-- Tarjeta del Día Actual -->
+    <article class="day-content-card">
+      <span class="day-header-badge" id="dayBadge">DÍA 1 DE 7 • CUADERNO PERSONAL DE VALIENTE</span>
+      <h2 class="day-title" id="dayTitle">Cargando contenido...</h2>
+
+      <!-- Tarjeta Beige Suave (#EFECE6) con el Concepto Terapéutico -->
+      <section class="concept-card">
+        <div class="concept-header">
+          <span class="concept-icon">🕊️</span>
+          <h3 class="concept-title">Concepto Terapéutico del Día</h3>
+        </div>
+        <p class="concept-text" id="conceptText">Cargando concepto...</p>
+      </section>
+
+      <!-- Reproductor de Audio Terapéutico -->
+      <section class="audio-section">
+        <div class="audio-header">
+          <div class="audio-icon-box">🎧</div>
+          <div class="audio-meta">
+            <h4>Audio Guía con la Dra. Erika Rodríguez</h4>
+            <p>Escucha esta píldora de serenidad antes de iniciar tus reflexiones escritas.</p>
+          </div>
+        </div>
+        <audio id="guiaAudioPlayer" class="audio-player-element" controls preload="metadata">
+          Tu navegador no soporta la reproducción de audio HTML5.
+        </audio>
+        <p class="audio-disclaimer">Duración estimada: 3 a 5 minutos • Audio de introspección guiada</p>
+      </section>
+
+      <!-- Preguntas y Áreas de Texto Dinámicas -->
+      <section class="questions-section">
+        <h3 class="questions-section-title">
+          <span>✍️</span> Tus Reflexiones y Ejercicios, <span class="user-inline-name">Valiente</span>
+        </h3>
+        <p class="questions-helper-text">
+          Cuaderno íntimo y privado de <strong class="user-inline-name">Valiente</strong>. Tus respuestas se guardan de forma encriptada en tu espacio seguro.
+        </p>
+
+        <form id="dayQuestionsForm" onsubmit="return false;">
+          <div id="questionsList">
+            <!-- Textareas generados dinámicamente según CONTENIDOS_GUIA -->
+          </div>
+        </form>
+      </section>
+
+      <!-- Barra de Acciones y CTA Terracota -->
+      <footer class="actions-bar">
+        <div class="nav-buttons-row">
+          <button type="button" id="btnPrevDay" class="btn-nav-prev" style="visibility: hidden;">
+            ← Día Anterior
+          </button>
+          <button type="button" id="btnNextDay" class="btn-nav-next">
+            Siguiente Día →
+          </button>
+        </div>
+
+        <button type="button" id="btnSaveReflection" class="btn-cta-terracota">
+          <span>Guardar mi Reflexión del Día ✨</span>
+        </button>
+      </footer>
+
+      <div style="margin-top: 14px;">
+        <span class="save-status-msg" id="saveStatusIndicator">Listo para registrar tus respuestas.</span>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Notificaciones Toast -->
+  <aside id="toastNotification" class="toast-notification" role="status" aria-live="polite"></aside>
+
+  <!-- Modal para Personalizar Nombre o Apodo -->
+  <dialog id="editNameModal" class="name-modal">
+    <div class="name-modal-card">
+      <div class="name-modal-header">
+        <span class="name-modal-icon">✍️</span>
+        <h3 class="name-modal-title">Personaliza tu Cuaderno</h3>
+      </div>
+      <p class="name-modal-desc">
+        ¿Cómo te gustaría que la Dra. Erika Rodríguez te llame en tus reflexiones? (Tu nombre, tu apodo o como más te guste que te digan).
+      </p>
+      <form id="editNameForm" method="dialog">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <input type="text" id="inputCustomName" class="name-modal-input" placeholder="Ej: Laura, Majo, Mari..." maxlength="25" required>
+        </div>
+        <div class="name-modal-actions">
+          <button type="button" id="btnCancelEditName" class="btn-modal-cancel">Cancelar</button>
+          <button type="submit" id="btnSaveCustomName" class="btn-modal-save">Guardar Mi Nombre ✨</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Modal de Graduación: Botiquín Emocional + Sesión en Vivo Zoom -->
+  <dialog id="graduationModal" class="graduation-modal">
+    <div class="graduation-modal-card">
+      
+      <!-- Cabecera del Certificado / Botiquín -->
+      <div class="grad-modal-header">
+        <div class="grad-header-top">
+          <span class="grad-seal">🕊️✨</span>
+          <button type="button" id="btnCloseGraduationModal" class="grad-btn-close" aria-label="Cerrar modal">&times;</button>
+        </div>
+        <span class="grad-kicker">RECONOCIMIENTO &amp; ENTREGABLES FINALES</span>
+        <h2 class="grad-title">¡Has completado tus 7 Días de Reconstrucción, <span class="user-inline-name">Valiente</span>!</h2>
+        <p class="grad-desc">
+          Un proceso guiado por la <strong>Dra. Erika Rodríguez — Psicóloga Universidad Cooperativa de Colombia (UCC) • ReTHUS</strong>. Aquí tienes tus herramientas finales de acompañamiento:
+        </p>
+      </div>
+
+      <!-- Tarjeta 1: Tu Pase al Círculo en Vivo Mensual -->
+      <section class="grad-feature-card grad-live-card">
+        <div class="grad-feature-icon">☕</div>
+        <div class="grad-feature-body">
+          <span class="grad-feature-badge">ACOMPAÑAMIENTO EN VIVO INCLUIDO</span>
+          <h3 class="grad-feature-title">Tu Pase al Círculo en Vivo: «El Café del Migrante»</h3>
+          <p class="grad-feature-desc">
+            No estás sola en este camino. Tienes acceso a nuestro <strong>encuentro grupal mensual en vivo por Zoom (60 a 75 min)</strong> con Erika Rodríguez y otras personas migrantes. Un espacio seguro para compartir avances, resolver dudas y recargar energía.
+          </p>
+          <div class="grad-feature-actions">
+            <a href="https://wa.me/573219315490?text=Hola%20Erika,%20complet%C3%A9%20mis%207%20d%C3%ADas%20del%20Manual%20del%20Migrante%20y%20deseo%20activar%20mi%20pase%20al%20pr%C3%B3ximo%20C%C3%ADrculo%20en%20Vivo%20por%20Zoom" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-confirm">
+              Confirmar Mi Pase por WhatsApp 💬
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tarjeta 2: Botiquín Emocional Consolidado -->
+      <section class="grad-feature-card" id="botiquinPrintArea">
+        <div class="grad-botiquin-header">
+          <div>
+            <span class="grad-feature-badge" style="background: var(--terracota-light); color: var(--terracota-hover);">TU DIARIO CLÍNICO CONSOLIDADO</span>
+            <h3 class="grad-feature-title">Tu «Botiquín de Emergencia Emocional» Personal</h3>
+            <p class="grad-feature-desc">
+              Este es tu mapa de resiliencia personal con las reflexiones que tú misma respondiste en los 7 días. Consérvalo para abrirlo cada vez que tengas un día difícil lejos de casa:
+            </p>
+          </div>
+          <button type="button" id="btnPrintBotiquin" class="btn-print-botiquin">
+            <span>📄 Descargar / Imprimir en PDF</span>
+          </button>
+        </div>
+
+        <!-- Contenedor dinámico donde se inyectan las respuestas de los 7 días -->
+        <div id="botiquinDaysCompiled" class="botiquin-compiled-list">
+          <!-- Inyectado vía JS en curso.js -->
+        </div>
+      </section>
+
+      <!-- Tarjeta 3: Continuidad / Terapia 1 a 1 -->
+      <section class="grad-feature-card grad-therapy-bridge">
+        <div class="grad-therapy-grid">
+          <div>
+            <span class="grad-feature-badge" style="background: #E8F5E9; color: #2E7D32;">PASO OPCIONAL DE PROFUNDIZACIÓN</span>
+            <h3 class="grad-feature-title">¿Sientes que necesitas acompañamiento individualizado?</h3>
+            <p class="grad-feature-desc">
+              Si durante estos 7 días descubriste heridas más profundas, patrones de apego o ansiedad migratoria que deseas trabajar de forma exclusiva, tienes un <strong>bono preferencial de bienvenida</strong> para tu primera sesión psicoterapéutica 1 a 1 por videollamada con Erika.
+            </p>
+          </div>
+          <div>
+            <a href="https://wa.me/573219315490?text=Hola%20Erika,%20complet%C3%A9%20el%20Manual%20del%20Migrante%20y%20quisiera%20consultar%20sobre%20una%20sesi%C3%B3n%20terap%C3%A9utica%20individual%201%20a%201" target="_blank" rel="noopener noreferrer" class="btn-therapy-cta">
+              Consultar Sesión Individual ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="grad-footer-row">
+        <button type="button" id="btnCloseGradModalBottom" class="btn-modal-cancel">Volver al Cuaderno</button>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- Pie de página -->
+  <footer class="app-footer">
+    <div class="app-footer-inner">
+      <p class="footer-author">Dra. Erika Rodríguez — Psicóloga</p>
+      <p class="footer-creds">
+        Egresada de la Universidad Cooperativa de Colombia (UCC) • Registro Nacional ReTHUS • Consulta privada y acompañamiento a migrantes.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script modular de la WebApp -->
+  <script type="module" src="curso.js"></script>
+
+</body>
+</html>

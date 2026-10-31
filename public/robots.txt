@@ -1,0 +1,33 @@
+# robots.txt para Erika Rodríguez — Psicóloga (Villavicencio & Online)
+# Web: https://erikarodriguezpsicologa.com/
+
+User-agent: *
+Allow: /
+
+# Motores de Búsqueda Generativa & GEO
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Ubicación del Sitemap XML
+Sitemap: https://erikarodriguezpsicologa.com/sitemap.xml

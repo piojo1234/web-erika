@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro de Diagnósticos & Programa Proyéctate — Dra. Erika Rodríguez</title>
+  <meta name="description" content="Centro de Diagnósticos Interactivos y Orientación Vocacional Interdisciplinar con la Dra. Erika Rodríguez, Psicóloga UCC (ReTHUS). Tests de Autoestima, Lenguajes del Amor, Vocacional y Manual del Migrante.">
+  
+  <!-- Tipografías: Montserrat e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       MANUAL DE MARCA DRA. ERIKA RODRÍGUEZ
+       - Fondo principal: Blanco Lino (#F9F8F6)
+       - Color primario: Verde Petróleo / Teal (#388A8E)
+       - Acentos y Botones CTA: Terracota Suave (#D8836C) con hover (#C0705B)
+       - Tarjetas y Contenedores: Beige Suave (#EFECE6)
+       - Tipografías: Montserrat (H1/H2) e Inter (cuerpo de texto)
+       ========================================================================== */
+    :root {
+      --bg-lino: #F9F8F6;
+      --teal-primary: #388A8E;
+      --teal-dark: #235F62;
+      --teal-light: #EBF4F4;
+      --teal-border: rgba(56, 138, 142, 0.22);
+      --terracota: #D8836C;
+      --terracota-hover: #C0705B;
+      --terracota-light: #FBF0ED;
+      --beige-card: #EFECE6;
+      --beige-dark: #DDD8CE;
+      --text-main: #232C2D;
+      --text-muted: #556668;
+      --white: #FFFFFF;
+      --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 2px 10px rgba(35, 44, 45, 0.05);
+      --shadow-md: 0 8px 26px rgba(56, 138, 142, 0.09);
+      --shadow-lg: 0 16px 40px rgba(35, 44, 45, 0.1);
+      --shadow-terracota: 0 8px 24px rgba(216, 131, 108, 0.35);
+      --transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-lino);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--beige-dark);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo-img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--teal-primary);
+      line-height: 1.1;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--teal-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: var(--radius-md);
+      padding: 12px 20px;
+      font-size: 0.92rem;
+      gap: 8px;
+    }
+
+    .btn-terracota {
+      background-color: var(--terracota);
+      color: var(--white);
+      box-shadow: var(--shadow-terracota);
+    }
+
+    .btn-terracota:hover {
+      background-color: var(--terracota-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(216, 131, 108, 0.42);
+    }
+
+    .btn-primary {
+      background-color: var(--teal-primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--white);
+      color: var(--teal-dark);
+      border: 1.5px solid var(--teal-border);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--teal-light);
+      border-color: var(--teal-primary);
+    }
+
+    .btn-lg {
+      padding: 16px 28px;
+      font-size: 1rem;
+    }
+
+    /* Hero */
+    .hero-section {
+      padding: 70px 0 60px;
+      background: radial-gradient(circle at 80% 20%, rgba(56, 138, 142, 0.12) 0%, transparent 50%),
+                  radial-gradient(circle at 10% 80%, rgba(216, 131, 108, 0.08) 0%, transparent 45%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .kicker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 14px;
+      background: var(--teal-light);
+      color: var(--teal-primary);
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--teal-border);
+      margin-bottom: 18px;
+      font-family: var(--font-heading);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4.5vw, 2.9rem);
+      font-weight: 800;
+      color: var(--teal-dark);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-pill {
+      font-size: 0.82rem;
+      color: var(--teal-dark);
+      background: var(--white);
+      border: 1px solid var(--beige-dark);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* SECCIÓN PRINCIPAL: CENTRO DE DIAGNÓSTICOS */
+    .diagnostics-section {
+      padding: 80px 0;
+      background: var(--white);
+      border-top: 1px solid var(--beige-dark);
+      border-bottom: 1px solid var(--beige-dark);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 50px;
+    }
+
+    .section-kicker {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--terracota);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .diagnostic-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    /* Tarjetas Beige Suave (#EFECE6) con diseño refinado */
+    .test-card {
+      background: var(--beige-card);
+      border: 1.5px solid var(--beige-dark);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .test-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal-primary);
+      background: var(--white);
+    }
+
+    .test-card-badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 4px 10px;
+      background: var(--white);
+      color: var(--teal-primary);
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--teal-border);
+      margin-bottom: 16px;
+    }
+
+    .test-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .test-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .test-card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .test-card-features {
+      list-style: none;
+      margin-bottom: 26px;
+      border-top: 1px solid var(--beige-dark);
+      padding-top: 16px;
+    }
+
+    .test-card-features li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .test-card-features li::before {
+      content: '✓';
+      color: var(--teal-primary);
+      font-weight: bold;
+    }
+
+    .test-card-footer {
+      margin-top: auto;
+    }
+
+    .test-card-footer .btn {
+      width: 100%;
+    }
+
+    /* SECCIÓN DESTACADA: MANUAL DEL MIGRANTE */
+    .migrante-banner-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--teal-light) 0%, var(--white) 100%);
+    }
+
+    .migrante-card {
+      background: var(--white);
+      border: 2px solid var(--teal-border);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .migrante-badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--terracota);
+      background: var(--terracota-light);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 14px;
+    }
+
+    .migrante-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--teal-dark);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .migrante-desc {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.65;
+    }
+
+    .migrante-days-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .day-preview-item {
+      background: var(--beige-card);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .day-preview-item strong {
+      color: var(--teal-primary);
+      font-family: var(--font-heading);
+    }
+
+    /* Respaldo Profesional y Perfil */
+    .authority-section {
+      padding: 70px 0;
+      background: var(--bg-lino);
+    }
+
+    .authority-box {
+      background: var(--beige-card);
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      border: 1px solid var(--beige-dark);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .authority-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--teal-dark);
+    }
+
+    .authority-box p {
+      max-width: 720px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--white);
+      border-top: 1px solid var(--beige-dark);
+      padding: 40px 0 30px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--teal-primary);
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      list-style: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--teal-primary);
+    }
+
+    /* Media Queries */
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .diagnostic-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .migrante-card {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-wrap">
+        <img src="assets/images/logo.png" alt="Dra. Erika Rodríguez" class="brand-logo-img" onerror="this.style.display='none'">
+        <div>
+          <div class="brand-name">Erika Rodríguez</div>
+          <div class="brand-badge">Psicología & Desarrollo Personal</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#diagnosticos" style="color: var(--teal-primary);">Centro de Diagnósticos</a></li>
+          <li><a href="#manual-migrante">Manual del Migrante</a></li>
+          <li><a href="proyectate.html">Proyéctate</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/573219315490?text=Hola%20Dra.%20Erika,%20quiero%20conocer%20m%C3%A1s%20sobre%20sus%20programas%20y%20diagn%C3%B3sticos" target="_blank" rel="noopener noreferrer" class="btn btn-terracota">
+        WhatsApp Directo ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div>
+        <span class="kicker-badge">🌿 PSICOLOGÍA CLÍNICA • RECONSTRUCCIÓN & VOCACIÓN</span>
+        <h1 class="hero-title">
+          Descubre tu punto de partida emocional y vocacional con diagnóstico profesional.
+        </h1>
+        <p class="hero-subtitle">
+          Herramientas interactivas confidenciales diseñadas por la Psicóloga Erika Rodríguez (UCC) para identificar la autoexigencia, sanar la comunicación en tus relaciones y alinear tu carrera con tu verdadero propósito.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#diagnosticos" class="btn btn-terracota btn-lg">
+            Explorar Centro de Diagnósticos ↓
+          </a>
+          <a href="curso/index.html?token=demo" class="btn btn-secondary btn-lg">
+            Ver Portal Manual del Migrante 🕊️
+          </a>
+        </div>
+
+        <div class="hero-pills">
+          <span class="hero-pill">✓ Psicóloga Titulada UCC • ReTHUS</span>
+          <span class="hero-pill">✓ 100% Confidencial y Gratuito</span>
+          <span class="hero-pill">✓ Resultados Inmediatos por WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CENTRAL: CENTRO DE DIAGNÓSTICOS CON LAS 3 TARJETAS -->
+  <section id="diagnosticos" class="diagnostics-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">EVALUACIONES INTERACTIVAS</span>
+        <h2 class="section-title">Centro de Diagnósticos</h2>
+        <p class="section-desc">
+          Cuestionarios de 2 a 3 minutos basados en modelos psicológicos validados. Selecciona el área en la que sientes mayor inquietud para obtener claridad y recomendaciones terapéuticas precisas.
+        </p>
+      </div>
+
+      <div class="diagnostic-cards-grid">
+        
+        <!-- Tarjeta 1: Test de Autoestima & Límites Personales -->
+        <article class="test-card">
+          <div>
+            <span class="test-card-badge">AUTOESTIMA • 2 MINUTOS</span>
+            <div class="test-card-icon">🌱</div>
+            <h3 class="test-card-title">Test de Autoestima & Límites Personales</h3>
+            <p class="test-card-desc">
+              Evalúa la calidad de tu diálogo interno, cómo reaccionas ante los errores y qué tan difícil te resulta decir "no" sin experimentar culpa.
+            </p>
+            <ul class="test-card-features">
+              <li>Mide niveles de autoexigencia y perfeccionismo</li>
+              <li>Evalúa asertividad y límites frente a otros</li>
+              <li>Recomendaciones de diálogo compasivo</li>
+            </ul>
+          </div>
+          <div class="test-card-footer">
+            <a href="test-autoestima.html" class="btn btn-terracota">
+              Comenzar Test de Autoestima ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2: Test de los 5 Lenguajes del Amor -->
+        <article class="test-card">
+          <div>
+            <span class="test-card-badge">RELACIONES • 3 MINUTOS</span>
+            <div class="test-card-icon">🤍</div>
+            <h3 class="test-card-title">Test de los 5 Lenguajes del Amor</h3>
+            <p class="test-card-desc">
+              Resuelve 8 dilemas afectivos de pareja para identificar tu forma primordial de dar y recibir afecto, superando la soledad compartida.
+            </p>
+            <ul class="test-card-features">
+              <li>Identifica tu lenguaje principal y secundario</li>
+              <li>Detecta fuentes invisibles de conflicto afectivo</li>
+              <li>Claves prácticas para comunicar tus necesidades</li>
+            </ul>
+          </div>
+          <div class="test-card-footer">
+            <a href="test-lenguaje-amor.html" class="btn btn-terracota">
+              Descubrir Mi Lenguaje del Amor ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Tarjeta 3: Test de Orientación Vocacional & Propósito -->
+        <article class="test-card">
+          <div>
+            <span class="test-card-badge">VOCACIÓN • 2 MINUTOS</span>
+            <div class="test-card-icon">🧭</div>
+            <h3 class="test-card-title">Test de Orientación Vocacional & Propósito</h3>
+            <p class="test-card-desc">
+              Diseñado bajo abordaje interdisciplinar junto a educadores expertos. Clarifica tus talentos intrínsecos y supera la parálisis en tu carrera.
+            </p>
+            <ul class="test-card-features">
+              <li>Diagnóstico de estancamiento profesional</li>
+              <li>Alineación de talentos con viabilidad económica</li>
+              <li>Puente directo hacia el Programa Proyéctate</li>
+            </ul>
+          </div>
+          <div class="test-card-footer">
+            <a href="test-vocacional.html" class="btn btn-terracota">
+              Iniciar Test Vocacional ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DESTACADA: MANUAL DEL MIGRANTE WEBAPP -->
+  <section id="manual-migrante" class="migrante-banner-section">
+    <div class="container">
+      <div class="migrante-card">
+        <div>
+          <span class="migrante-badge">PORTAL WEB INTERACTIVO</span>
+          <h2 class="migrante-title">
+            Manual del Migrante: 7 Días de Reconstrucción Emocional
+          </h2>
+          <p class="migrante-desc">
+            Un cuaderno de trabajo íntimo con audios terapéuticos diarios y ejercicios de introspección para sanar el duelo migratorio, desmontar el síndrome de la impostora y redefinir tus metas en el nuevo país.
+          </p>
+
+          <div class="migrante-days-preview">
+            <div class="day-preview-item"><strong>Día 1:</strong> Duelo Migratorio</div>
+            <div class="day-preview-item"><strong>Día 2:</strong> Síndrome Impostora</div>
+            <div class="day-preview-item"><strong>Día 3:</strong> Sanar la Culpa</div>
+            <div class="day-preview-item"><strong>Día 4:</strong> Límites y Decir NO</div>
+            <div class="day-preview-item"><strong>Día 5:</strong> Voz Crítica Interna</div>
+            <div class="day-preview-item"><strong>Día 6:</strong> Redefinir Metas</div>
+            <div class="day-preview-item"><strong>Día 7:</strong> Botiquín Emocional</div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="curso/index.html?token=demo" class="btn btn-terracota btn-lg">
+              Abrir WebApp del Manual (/curso/index.html) 🕊️
+            </a>
+            <a href="https://wa.me/573219315490?text=Hola%20Erika,%20quiero%20adquirir%20el%20Manual%20del%20Migrante" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
+              Adquirir Acceso Personal ↗
+            </a>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="background: var(--beige-card); border-radius: var(--radius-lg); padding: 32px 24px; border: 1px solid var(--beige-dark);">
+            <div style="font-size: 3.5rem; margin-bottom: 12px;">🕊️</div>
+            <h4 style="font-family: var(--font-heading); color: var(--teal-dark); margin-bottom: 8px;">Tu espacio seguro lejos de casa</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+              Conexión directa en la nube mediante Supabase Cloud, almacenamiento encriptado de tus reflexiones y reproductor de audio guiado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Respaldo Profesional -->
+  <section class="authority-section">
+    <div class="container">
+      <div class="authority-box">
+        <h3>Erika Rodríguez — Psicóloga Profesional</h3>
+        <p>
+          Egresada de la Universidad Cooperativa de Colombia (UCC), con registro nacional ReTHUS. Acompaña procesos terapéuticos individuales, de pareja y vocacionales, con un enfoque cálido, basado en evidencia y profundamente respetuoso del ritmo de cada persona.
+        </p>
+        <a href="https://wa.me/573219315490?text=Hola%20Erika,%20quiero%20agendar%20una%20consulta%20individual" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Agendar Consulta Personalizada 💬
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-logo">Erika Rodríguez — Psicología & Desarrollo Personal</div>
+      <p class="footer-copy">
+        © 2026 Dra. Erika Rodríguez. Todos los derechos reservados. Diseñado bajo el Manual de Marca Oficial.
+      </p>
+      <ul class="footer-links">
+        <li><a href="test-autoestima.html">Test Autoestima</a></li>
+        <li><a href="test-lenguaje-amor.html">Test Lenguajes del Amor</a></li>
+        <li><a href="test-vocacional.html">Test Vocacional</a></li>
+        <li><a href="curso/index.html?token=demo">Manual del Migrante</a></li>
+        <li><a href="proyectate.html">Programa Proyéctate</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
