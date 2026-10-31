@@ -63,7 +63,7 @@
     - **Sitio Web**: https://erikarodriguezpsicologa.com/psicologa-villavicencio.html
     - **Horarios**: Lunes a Viernes 8:00 AM – 7:00 PM | Sábados 8:00 AM – 2:00 PM | Domingos Cerrado
     - **Ficha Google vinculada**: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhwb05uY3llWGd5GAo
-  - **Protocolo de Reseñas Locales**: Solicitar opiniones usando palabras clave locales ("Erika", "Villavicencio", "Autoestima").
+  - **Protocolo de Reseñas Locales**: Primeras 4 reseñas con 5 estrellas obtenidas con éxito.
 
 ---
 
@@ -79,13 +79,15 @@
 ---
 
 ### 🎯 FASE 5: Embudo de Conversión & Conexión de Tests con Infoproductos
-- [ ] **5.1** Conectar los resultados de los 3 Tests Interactivos con la prescripción automática de la Guía Digital:
-  - Test de Autoestima ➡️ Recomendar *Cuaderno de Trabajo de Autoestima*.
-  - Test de Lenguajes del Amor ➡️ Recomendar *Caja de Conexión de Pareja*.
-  - Test Vocacional ➡️ Recomendar *Programa Proyéctate*.
+- [x] **5.1** Conectar los resultados de los 3 Tests Interactivos con la prescripción automática de la Guía Digital y Acompañamiento:
+  - Test de Autoestima ➡️ Cálculo dinámico de puntaje (5 a 15), arquetipo clínico y recomendación de *Habitarte en 90 Días* / Sesión Individual.
+  - Test de Lenguajes del Amor ➡️ Tabulación de 8 dilemas para determinar lenguaje primario y secundario, insight vincular y recomendación de *Terapia de Pareja*.
+  - Test Vocacional ➡️ Perfil de transición y diagnóstico del obstáculo principal conectado al *Programa Proyéctate*.
 - [ ] **5.2** Fragmentos indexables gratuitos de las guías:
   - Índice temático y muestra clínica de las primeras páginas directamente en HTML para capturar búsquedas de cola larga.
-- [ ] **5.3** Call to Actions (CTAs) contextuales en lugar de botones genéricos.
+- [x] **5.3** Call to Actions (CTAs) contextuales y seguimiento de conversiones:
+  - Botones de WhatsApp con mensaje personalizado prellenado con nombre, perfil y reto del paciente.
+  - Integración completa de Google Analytics 4 (`G-2HV6E6V8L0`) en todas las páginas con eventos `generate_lead`, `quiz_completed`, `quiz_whatsapp_click` y tracking global de clics de WhatsApp.
 
 ---
 

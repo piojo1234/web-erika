@@ -396,13 +396,58 @@ body.quiz-page {
 }
 
 /* Pantalla de Éxito / Diagnóstico */
+.quiz-result-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quiz-result-icon {
+  font-size: 52px;
+  margin-bottom: 12px;
+  animation: pulseIcon 2s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.quiz-result-badge {
+  display: inline-block;
+  background: var(--terracota-light);
+  color: var(--terracota);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.quiz-result-title {
+  font-family: var(--font-heading);
+  color: var(--teal-dark);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 6px 0 8px;
+  line-height: 1.25;
+}
+
+.quiz-result-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
 .diagnosis-result-box {
   background: var(--beige-card);
   border-left: 5px solid var(--teal-primary);
   border-radius: var(--radius-md);
   padding: 24px;
-  margin: 22px 0;
+  margin: 20px 0;
   text-align: left;
+  box-shadow: var(--shadow-sm);
 }
 
 .diagnosis-result-box h4 {
@@ -418,8 +463,39 @@ body.quiz-page {
   line-height: 1.6;
 }
 
+.quiz-prescription-card {
+  background: var(--teal-light);
+  border: 1.5px solid var(--teal-border);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  margin: 20px 0 24px;
+  text-align: left;
+}
+
+.rx-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--teal-dark);
+  background: rgba(56, 138, 142, 0.15);
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.quiz-actions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
 @media (max-width: 600px) {
   .quiz-card {
     padding: 28px 18px;
+  }
+  .quiz-result-title {
+    font-size: 1.35rem;
   }
 }

@@ -241,3 +241,20 @@ function initIntroAnimation() {
     }
   }, 2800);
 }
+
+/* 6. Seguimiento de Conversiones de WhatsApp en Google Analytics 4 */
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href*="wa.me"]');
+  if (link && typeof window.gtag === 'function') {
+    try {
+      window.gtag('event', 'whatsapp_click', {
+        event_category: 'conversion',
+        event_label: link.innerText.trim().substring(0, 50) || 'Botón WhatsApp',
+        link_url: link.href
+      });
+    } catch (err) {
+      console.warn('Error registrando evento en GA4:', err);
+    }
+  }
+});
+
